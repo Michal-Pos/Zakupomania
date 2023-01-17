@@ -12,7 +12,7 @@ protected:
     float x,y;
     double budzet;
 public:
-    virtual void kup_Towar(Towar* T){};
+    virtual void kup_Towar(Towar* T);
 
     Mieszkaniec(double _budzet, float _x, float _y);
 

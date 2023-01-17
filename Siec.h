@@ -8,9 +8,6 @@
 
 #include "J_Handlowa.h"
 #include "Towar.h"
-
-
-
 using namespace std;
 
 class Siec: public J_Handlowa{

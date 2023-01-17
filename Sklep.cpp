@@ -28,7 +28,11 @@ void Sklep::wypisz_stan() {
 
 }
 
-Towar* Sklep::sprawdz_Towar(string nazwa) {
+//Towar *Sklep::sprawdz_Towar(string nazwa) const {
+//    return nullptr;
+//}
+
+Towar* Sklep::sprawdz_Towar(string nazwa){
     cout<<"Sprawdzam sklep dla towaru: "<<nazwa<<endl;
     for (Towar* t: towary){
         if (t->daj_nazwe()==nazwa){
@@ -39,6 +43,14 @@ Towar* Sklep::sprawdz_Towar(string nazwa) {
     cout<<"W sklepie nie ma tego towaru"<<endl;
     return nullptr;
 }
+
+Sklep::~Sklep() {
+}
+
+void Sklep::sprzedaj_Towar(Towar *T) {
+    T->ustaw_ilosc(T->daj_ilosc()-1);
+}
+
 
 
 
