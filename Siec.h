@@ -25,6 +25,8 @@ public:
     //Konstruktor
     Siec(double _marza);
 
+    virtual ~Siec();
+
 
     //techniczne
     Siec() = default;

@@ -23,10 +23,11 @@ public:
 
     Sklep(float _x,float _y);
     void wypisz_stan();
+    virtual ~Sklep();
 
     //techniczne
     Sklep() = default;
-    virtual ~Sklep();
+
     Sklep(const Sklep&) = default;
     Sklep& operator=(const Sklep&) = default;
     Sklep(Sklep&&) = default;
