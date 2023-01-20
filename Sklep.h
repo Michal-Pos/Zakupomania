@@ -12,7 +12,7 @@ using namespace std;
 class Sklep:J_Handlowa{
 private:
     //+marża jako atrybut w przypadku dziedziczenia z klasy Sieć
-    vector<Towar*> towary;
+    vector<Towar*> towary = {};
     Siec* siec = nullptr;
     float x,y;
 public:

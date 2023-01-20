@@ -18,6 +18,9 @@ public:
     Towar* sprawdz_Towar(string nazwa) ;
     void sprzedaj_Towar(Towar* T) ;//będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
 
+    //gettery
+    double dajmarza(){return marza;}
+
     void przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
     void dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
     void usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
