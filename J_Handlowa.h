@@ -19,7 +19,7 @@ public:
     J_Handlowa() = default;
     J_Handlowa(const J_Handlowa&) = delete;
     J_Handlowa& operator=(const J_Handlowa&) = delete;
-    virtual ~J_Handlowa() = default;
+    virtual ~J_Handlowa(){};
     J_Handlowa(J_Handlowa&&) = delete;
     J_Handlowa& operator=(J_Handlowa&&) = delete;
 

@@ -11,9 +11,10 @@ Sklep::Sklep(float _x, float _y): x(_x),y(_y){}
 void Sklep::dodaj_Towar(Towar* T) {
     cout<<"dodano towar "<<T->daj_nazwe()<<" w ilości: "<<T->daj_ilosc()<<endl;
     for (Towar* t: towary){
+
         if (t->daj_nazwe()==T->daj_nazwe()){
             t->ustaw_ilosc(t->daj_ilosc()+T->daj_ilosc());
-//            break;
+            return;
         };
     }
     towary.push_back(T);

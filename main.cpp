@@ -48,16 +48,29 @@ int main() {
 //    T2.wypisz_stan();
 
     Sklep Pulawska(17,18);
+//    Sklep Niepodleglosci(20.5, -31);
 //    Pulawska.dodaj_Towar(&T1);
 //    Pulawska.dodaj_Towar(&T2);
+    cout<<"Pulawska"<<endl;
+//    Pulawska.wypisz_stan();
+//    cout<<"Niepodległosci"<<endl;
+//    Niepodleglosci.wypisz_stan();
+
+    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
+    wygeneruj_asortyment(&Pulawska);
     Pulawska.wypisz_stan();
+
+//    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
     wygeneruj_asortyment(&Pulawska);
 
 //    Towar* T = Pulawska.sprawdz_Towar("Zioło");
 //    Pulawska.sprzedaj_Towar(T);
     Pulawska.wypisz_stan();
+//    Niepodleglosci.wypisz_stan();
 
     Pulawska.sprawdz_Towar("Chleb");
+
+//    Niepodleglosci.sprawdz_Towar("Mleko");
 
 
 

@@ -5,13 +5,9 @@
 #include "Towar.h"
 #include <string>
 
-//unsigned int Towar::daj_ilosc() const {
-//    return 0;
-//}
-//
-//Towar::Towar(unsigned int _ilosc, float _cena) {
-//
-//}
+
+
+
 Towar::Towar(unsigned int _ilosc, float _cena, string _nazwa):ilosc(_ilosc), cena(_cena), nazwa(_nazwa) {
 }
 
