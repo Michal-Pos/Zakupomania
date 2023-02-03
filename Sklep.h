@@ -18,7 +18,7 @@ private:
     float x,y;
 public:
     bool sprawdz_Towar(string nazwa);
-    bool sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
+    bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
 

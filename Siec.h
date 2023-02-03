@@ -17,7 +17,7 @@ private:
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
 public:
     bool sprawdz_Towar(string nazwa);
-    bool sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
+    bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
 
     //gettery
     double daj_marza(){return marza;}

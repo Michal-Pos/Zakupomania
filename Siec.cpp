@@ -11,7 +11,7 @@ bool Siec::sprawdz_Towar(string nazwa) {
     return false;
 }
 
-bool Siec::sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc) {
+bool Siec::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
     return true;
 }
 

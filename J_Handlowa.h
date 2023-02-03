@@ -16,7 +16,7 @@ class J_Handlowa {
 
 public:
     virtual bool sprawdz_Towar(string nazwa)=0;
-    virtual bool sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc)=0;
+    virtual bool sprzedaj_Towar(string nazwa, unsigned int ilosc)=0;
 
 
     J_Handlowa() = default;
