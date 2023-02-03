@@ -34,16 +34,16 @@ void Sklep::wypisz_stan() {
 }
 
 
-Towar* Sklep::sprawdz_Towar(string nazwa){
+bool Sklep::sprawdz_Towar(string nazwa){
     cout<<"--Sprawdzam sklep dla towaru: "<<nazwa<<"--"<<endl;
     for (Towar* t: towary){
         if (t->daj_nazwe()==nazwa){
             cout<<"W sklepie znajduje się "<< t->daj_nazwe()<<" w ilości "<<t->daj_ilosc()<<endl;
-            return t;
+            return true;
         };
     }
     cout<<"W sklepie nie ma "<<nazwa<<endl;
-    return nullptr;
+    return false;
 }
 
 

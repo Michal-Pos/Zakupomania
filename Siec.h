@@ -15,7 +15,7 @@ private:
     vector<Sklep*> lista_sklepow;
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
 public:
-    Towar* sprawdz_Towar(string nazwa) ;
+    bool sprawdz_Towar(string nazwa) ;
     void sprzedaj_Towar(Towar* T) ;//będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
 
     //gettery

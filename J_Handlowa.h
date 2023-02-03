@@ -12,7 +12,7 @@ class Siec;
 class Sklep;
 class J_Handlowa {
 public:
-    virtual Towar* sprawdz_Towar(string nazwa)=0;
+    virtual bool sprawdz_Towar(string nazwa)=0;
     virtual void sprzedaj_Towar(Towar* T)=0;
 
 

@@ -16,13 +16,14 @@ private:
     Siec* siec = nullptr;
     float x,y;
 public:
-    Towar* sprawdz_Towar(string nazwa);
+    bool sprawdz_Towar(string nazwa);
     void sprzedaj_Towar(Towar* T) ; //zmniejsza ilosc towaru
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
 
     // settery
     void ustaw_Siec(Siec* S);
+    void wyjdz_z_Siec();
 
     Sklep(float _x,float _y);
 
