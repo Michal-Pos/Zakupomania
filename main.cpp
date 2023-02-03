@@ -9,11 +9,17 @@
 #include<cstdlib>
 using namespace std;
 
+void print(string txt){
+    cout<<txt <<endl;
+}
+
 void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
     if (!Si->czy_Sklep_w_Sieci(Sk)){
+        cout<<"Do Sieci dodano Sklep"<<endl;
         Si->dodaj_Sklep(Sk);
         Sk->ustaw_Siec(Si);
-    } //Sklep jest juz w Sieci, nic nie robimy
+    }else
+        print("Sklep już się znajduje w Sieci");//Sklep jest juz w Sieci, nic nie robimy
 
 
 
@@ -23,7 +29,13 @@ void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
     if (Si->czy_Sklep_w_Sieci(Sk)) {
         Si->usun_Sklep(Sk);
         Sk->ustaw_Siec(nullptr);
+        print("Z Sieci został usunięty Sklep");
     }
+}
+
+void Mieszkaniec_kupuje(Mieszkaniec* M, string nazwa, Sklep* S){
+    S->sprawdz_Towar(nazwa);
+
 }
 
 
@@ -68,8 +80,13 @@ int main() {
 //    T2.ustaw_cene(17);
 //    T2.wypisz_stan();
     Siec Ross(17.5);
-
     Sklep Pulawska(17, 18);
+
+    dodaj_Siec_Sklep(&Ross, &Pulawska);
+    usun_Siec_Sklep(&Ross, &Pulawska);
+//    dodaj_Siec_Sklep(&Ross, &Pulawska);
+
+
 //    Sklep Niepodleglosci(20.5, -31);
 //    Pulawska.dodaj_Towar(&T1);
 //    Pulawska.dodaj_Towar(&T2);
@@ -78,19 +95,19 @@ int main() {
 //    cout<<"Niepodległosci"<<endl;
 //    Niepodleglosci.wypisz_stan();
 
-    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
-    wygeneruj_asortyment(&Pulawska);
-    Pulawska.wypisz_stan();
-
-//    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
-    wygeneruj_asortyment(&Pulawska);
-
-//    Towar* T = Pulawska.sprawdz_Towar("Zioło");
-//    Pulawska.sprzedaj_Towar(T);
-    Pulawska.wypisz_stan();
-//    Niepodleglosci.wypisz_stan();
-
-    Pulawska.sprawdz_Towar("Chleb");
+//    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
+//    wygeneruj_asortyment(&Pulawska);
+//    Pulawska.wypisz_stan();
+//
+////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
+//    wygeneruj_asortyment(&Pulawska);
+//
+////    Towar* T = Pulawska.sprawdz_Towar("Zioło");
+////    Pulawska.sprzedaj_Towar(T);
+//    Pulawska.wypisz_stan();
+////    Niepodleglosci.wypisz_stan();
+//
+//    Pulawska.sprawdz_Towar("Chleb");
 
 //    Niepodleglosci.sprawdz_Towar("Mleko");
 
