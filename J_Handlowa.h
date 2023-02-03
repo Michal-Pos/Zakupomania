@@ -7,6 +7,7 @@
 #include "Towar.h"
 #include "Mieszkaniec.h"
 #include <vector>
+#include <algorithm>
 #include <string>
 
 class Siec;

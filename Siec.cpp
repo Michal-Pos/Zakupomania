@@ -21,8 +21,13 @@ void Siec::przejmij_Siec(Siec *S) {
 
 void Siec::dodaj_Sklep(Sklep *S) {
 
+
 }
 
 void Siec::usun_Sklep(Sklep *S) {
 
+}
+
+bool Siec::czy_Sklep_w_Sieci(Sklep* S) {
+    return (count(lista_sklepow.begin(), lista_sklepow.end(), S));
 }

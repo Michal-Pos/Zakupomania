@@ -24,9 +24,10 @@ public:
     void przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
     void dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
     void usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
+    bool czy_Sklep_w_Sieci(Sklep* S);
 
     //Konstruktor
-    explicit Siec(double _marza): marza(_marza){};
+    Siec(double _marza): marza(_marza){};
 
     virtual ~Siec() = default;
 
