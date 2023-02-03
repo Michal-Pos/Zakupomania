@@ -39,13 +39,10 @@ bool Siec::usun_Sklep(Sklep *S) {
         i+=1;
     }
     return false;
-
-
 }
 
 
 bool Siec::czy_Sklep_w_Sieci(Sklep* S) {
-
     for (Sklep* Sk: lista_sklepow){
         if (Sk==S){
             return true;

@@ -20,7 +20,7 @@ public:
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
 
     //gettery
-    double daj_marza(){return marza;}
+    double daj_marza()const {return marza;}
 
     bool przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
     bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci

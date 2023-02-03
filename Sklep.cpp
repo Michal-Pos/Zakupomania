@@ -47,6 +47,12 @@ bool Sklep::sprawdz_Towar(string nazwa){
 }
 
 bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
+    for (Towar* T: towary){
+        if (T->daj_nazwe()==nazwa && T->daj_ilosc()>=ilosc){
+            T->ustaw_ilosc(T->daj_ilosc()-ilosc);
+            return true;
+        }
+    }
     return false;
 }
 
