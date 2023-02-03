@@ -50,6 +50,11 @@ bool Sklep::sprzedaj_Towar(Mieszkaniec *M, string nazwa, unsigned int ilosc) {
     return false;
 }
 
+bool Sklep::ustaw_Siec(Siec *S) {
+    this->siec = S;
+    return false;
+}
+
 
 
 //float Sklep::daj_marze() {

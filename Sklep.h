@@ -25,6 +25,7 @@ public:
     //gettery
     float daj_x() const{return x;}
     float daj_y() const {return y;}
+
 //    float daj_marze();
 
 

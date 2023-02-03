@@ -3,9 +3,7 @@
 //
 
 #include "Siec.h"
-bool Sklep::ustaw_Siec(Siec *S) {
-    return false;
-}
+
 //Siec::Siec(float _marza) {
 //
 //}
@@ -32,7 +30,16 @@ bool Siec::dodaj_Sklep(Sklep *S) {
 }
 
 bool Siec::usun_Sklep(Sklep *S) {
-    return true;
+    int i = 0;
+    for (Sklep* Sk: lista_sklepow){
+        if (Sk==S){
+            lista_sklepow.erase(lista_sklepow.begin()+ i);
+            return true;
+        }
+        i+=1;
+    }
+    return false;
+
 
 }
 
