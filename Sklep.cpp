@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 
-Sklep::Sklep(float _x, float _y): x(_x),y(_y){}
+
 
 void Sklep::dodaj_Towar(Towar* T) {
     cout<<"dodano towar "<<T->daj_nazwe()<<" w ilości: "<<T->daj_ilosc()<<endl;
@@ -46,10 +46,55 @@ bool Sklep::sprawdz_Towar(string nazwa){
     return false;
 }
 
-
-void Sklep::sprzedaj_Towar(Towar *T) {
-    T->ustaw_ilosc(T->daj_ilosc()-1);
+bool Sklep::sprzedaj_Towar(Mieszkaniec *M, string nazwa, unsigned int ilosc) {
+    return false;
 }
+
+void Sklep::ustaw_Siec(Siec* S) {
+
+}
+
+//float Sklep::daj_marze() {
+//    if (siec){
+//        return siec->daj_marza();
+//    }
+//    return 0;
+//}
+
+//Towar* Sklep::daj_Towar(string nazwa){
+//    if (sprawdz_Towar(nazwa)){
+//
+//    }
+//}
+//
+//double Sklep::daj_naleznosc(string nazwa){
+//    if (sprawdz_Towar(nazwa)){
+//        if (siec){
+//
+//        }
+//    }
+//}
+//
+//
+//
+//bool Sklep::sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc) {
+//    for (Towar* T: towary){
+//        if (T->daj_nazwe()==nazwa){
+//            if (T->daj_ilosc()>=ilosc){
+//                if (M->daj_budzet())
+//                cout<<"Wysłano: "<< T->daj_nazwe()<<" w ilości "<<ilosc<<endl;
+//                T->ustaw_ilosc(T->daj_ilosc()-ilosc);
+//            } else
+//                cout<<"W sklepie nie ma pożądanej ilości"<< T->daj_nazwe()<<". Obecna ilość"<<ilosc<<endl;
+//
+//
+//
+//        };
+//    }
+//    cout<<"W sklepie nie ma "<<nazwa<<endl;
+//    return false;
+//
+//}
 
 
 

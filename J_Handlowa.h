@@ -5,15 +5,17 @@
 #ifndef ZALICZENIOWY_J_HANDLOWA_H
 #define ZALICZENIOWY_J_HANDLOWA_H
 #include "Towar.h"
+#include "Mieszkaniec.h"
 #include <vector>
 #include <string>
 
 class Siec;
 class Sklep;
 class J_Handlowa {
+
 public:
     virtual bool sprawdz_Towar(string nazwa)=0;
-    virtual void sprzedaj_Towar(Towar* T)=0;
+    virtual bool sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc)=0;
 
 
     J_Handlowa() = default;

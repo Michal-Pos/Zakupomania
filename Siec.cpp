@@ -7,3 +7,22 @@
 //Siec::Siec(float _marza) {
 //
 //}
+bool Siec::sprawdz_Towar(string nazwa) {
+    return false;
+}
+
+void Siec::sprzedaj_Towar(Towar *T) {
+
+}
+
+void Siec::przejmij_Siec(Siec *S) {
+
+}
+
+void Siec::dodaj_Sklep(Sklep *S) {
+
+}
+
+void Siec::usun_Sklep(Sklep *S) {
+
+}

@@ -33,7 +33,8 @@ Sklep* wygeneruj_asortyment(Sklep* S){
         S->dodaj_Towar(&towar);
     }
     S->wypisz_stan();
-};
+    return S;
+}
 
 
 int main() {
@@ -41,13 +42,13 @@ int main() {
 //    T1.wypisz_stan();
 //    T1.ustaw_cene(12.5);
 //    T1.wypisz_stan();
-////
+
 //    Towar T2(10,9,"Zioło");
 //    T2.wypisz_stan();
 //    T2.ustaw_cene(17);
 //    T2.wypisz_stan();
 
-    Sklep Pulawska(17,18);
+    Sklep Pulawska(17, 18);
 //    Sklep Niepodleglosci(20.5, -31);
 //    Pulawska.dodaj_Towar(&T1);
 //    Pulawska.dodaj_Towar(&T2);

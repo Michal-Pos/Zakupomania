@@ -7,6 +7,7 @@
 #include <vector>
 #include "Towar.h"
 #include "J_Handlowa.h"
+#include "Mieszkaniec.h"
 using namespace std;
 
 class Sklep:J_Handlowa{
@@ -17,15 +18,21 @@ private:
     float x,y;
 public:
     bool sprawdz_Towar(string nazwa);
-    void sprzedaj_Towar(Towar* T) ; //zmniejsza ilosc towaru
+    bool sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
+
+    //gettery
+    float daj_x() const{return x;}
+    float daj_y() const {return y;}
+//    float daj_marze();
+
 
     // settery
     void ustaw_Siec(Siec* S);
     void wyjdz_z_Siec();
 
-    Sklep(float _x,float _y);
+    Sklep(float _x, float _y): x(_x),y(_y){}
 
 
     virtual ~Sklep() = default;

@@ -14,6 +14,8 @@ protected:
 public:
     virtual void kup_Towar(Towar* T);
 
+    double daj_budzet() {return budzet;}
+
     Mieszkaniec(double _budzet, float _x, float _y);
 
     Mieszkaniec(const Mieszkaniec&) = default;
