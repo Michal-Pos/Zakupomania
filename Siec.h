@@ -15,8 +15,8 @@ private:
     vector<Sklep*> lista_sklepow;
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
 public:
-    bool sprawdz_Towar(string nazwa) ;
-    void sprzedaj_Towar(Towar* T) ;//będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
+    bool sprawdz_Towar(string nazwa);
+    bool sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
 
     //gettery
     double daj_marza(){return marza;}
@@ -26,9 +26,9 @@ public:
     void usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
 
     //Konstruktor
-    Siec(double _marza): marza(_marza){};
+    explicit Siec(double _marza): marza(_marza){};
 
-    virtual ~Siec();
+    virtual ~Siec() = default;
 
 
     //techniczne
