@@ -1,12 +1,32 @@
 #include <iostream>
 #include "Miasto.h"
 #include "Sklep.h"
+#include "Siec.h"
 #include "Towar.h"
 #include <vector>
 #include <string>
 #include <random>
 #include<cstdlib>
 using namespace std;
+
+void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
+    if (!Si->czy_Sklep_w_Sieci(Sk)){
+        Si->dodaj_Sklep(Sk);
+        Sk->ustaw_Siec(Si);
+    } //Sklep jest juz w Sieci, nic nie robimy
+
+
+
+
+}
+void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
+    if (Si->czy_Sklep_w_Sieci(Sk)) {
+        Si->usun_Sklep(Sk);
+        Sk->ustaw_Siec(nullptr);
+    }
+}
+
+
 
 int generateRandomNumber(int n) {
     random_device rd; // used to obtain a seed for the random number engine
@@ -47,6 +67,7 @@ int main() {
 //    T2.wypisz_stan();
 //    T2.ustaw_cene(17);
 //    T2.wypisz_stan();
+    Siec Ross(17.5);
 
     Sklep Pulawska(17, 18);
 //    Sklep Niepodleglosci(20.5, -31);

@@ -50,9 +50,7 @@ bool Sklep::sprzedaj_Towar(Mieszkaniec *M, string nazwa, unsigned int ilosc) {
     return false;
 }
 
-void Sklep::ustaw_Siec(Siec* S) {
 
-}
 
 //float Sklep::daj_marze() {
 //    if (siec){

@@ -3,7 +3,9 @@
 //
 
 #include "Siec.h"
-
+bool Sklep::ustaw_Siec(Siec *S) {
+    return false;
+}
 //Siec::Siec(float _marza) {
 //
 //}
@@ -15,16 +17,17 @@ bool Siec::sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc) {
     return true;
 }
 
-void Siec::przejmij_Siec(Siec *S) {
-
+bool Siec::przejmij_Siec(Siec *S) {
+    return true;
 }
 
-void Siec::dodaj_Sklep(Sklep *S) {
-
-
+bool Siec::dodaj_Sklep(Sklep *S) {
+    if (czy_Sklep_w_Sieci(S)) cout<<"Sklep jest już w sieci"<<endl;
+    return true;
 }
 
-void Siec::usun_Sklep(Sklep *S) {
+bool Siec::usun_Sklep(Sklep *S) {
+    return true;
 
 }
 

@@ -7,6 +7,7 @@
 
 
 #include "J_Handlowa.h"
+#include "Sklep.h"
 #include "Towar.h"
 using namespace std;
 
@@ -21,9 +22,9 @@ public:
     //gettery
     double daj_marza(){return marza;}
 
-    void przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
-    void dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
-    void usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
+    bool przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
+    bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
+    bool usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
     bool czy_Sklep_w_Sieci(Sklep* S);
 
     //Konstruktor
@@ -31,13 +32,19 @@ public:
 
     virtual ~Siec() = default;
 
-
     //techniczne
     Siec() = default;
     Siec(const Siec&) = default; //kopiujący
     Siec& operator=(const Siec&) = default;
     Siec(Siec&&) = default;
     Siec& operator=(Siec&&) = default;
+
+    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
+    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
+
+
+
+
 };
 
 

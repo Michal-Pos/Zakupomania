@@ -29,8 +29,8 @@ public:
 
 
     // settery
-    void ustaw_Siec(Siec* S);
-    void wyjdz_z_Siec();
+    bool ustaw_Siec(Siec* S);
+
 
     Sklep(float _x, float _y): x(_x),y(_y){}
 
@@ -44,6 +44,9 @@ public:
     Sklep& operator=(const Sklep&) = default;
     Sklep(Sklep&&) = default;
     Sklep& operator=(Sklep&&) = default;
+    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
+    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
+
 };
 
 
