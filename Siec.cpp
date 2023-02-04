@@ -26,7 +26,7 @@ bool Siec::dodaj_Sklep(Sklep *S) {
         return false;
     }
     else lista_sklepow.push_back(S);
-
+    cout<<"Do Sieci dodano Sklep, teraz się w niej znajduje: "<<lista_sklepow.size()<<" sklepów"<<endl;
     return true;
 }
 

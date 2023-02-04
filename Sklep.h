@@ -26,6 +26,9 @@ public:
     tuple<string, float, unsigned int> daj_najdrozszy();
     tuple<string, float, unsigned int> daj_najtanszy();
 
+    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
+    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
+
 
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
@@ -39,6 +42,8 @@ public:
 
     // settery
     bool ustaw_Siec(Siec* S);
+    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
+    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
 
 
     Sklep(float _x, float _y): x(_x),y(_y){}
@@ -53,8 +58,7 @@ public:
     Sklep& operator=(const Sklep&) = default;
     Sklep(Sklep&&) = default;
     Sklep& operator=(Sklep&&) = default;
-    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
-    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
+
 
 };
 

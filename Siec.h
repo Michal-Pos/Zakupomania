@@ -15,6 +15,7 @@ class Siec: public J_Handlowa{
 private:
     vector<Sklep*> lista_sklepow;
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
+
 public:
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
@@ -38,14 +39,11 @@ public:
     Siec& operator=(const Siec&) = default;
     Siec(Siec&&) = default;
     Siec& operator=(Siec&&) = default;
-
     friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
     friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
 
-
-
-
 };
+
 
 
 #endif //ZALICZENIOWY_SIEC_H

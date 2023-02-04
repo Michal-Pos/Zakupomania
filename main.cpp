@@ -14,24 +14,23 @@ void print(string txt){
 }
 
 void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
-    if (!Si->czy_Sklep_w_Sieci(Sk)){
+
+    if (!Si->czy_Sklep_w_Sieci(Sk)){// Jesli sklep znajduje się w Sieci
         cout<<"Do Sieci dodano Sklep"<<endl;
         Si->dodaj_Sklep(Sk);
         Sk->ustaw_Siec(Si);
     }else
-        print("Sklep już się znajduje w Sieci");//Sklep jest juz w Sieci, nic nie robimy
-
-
-
+        cout<<"Sklep już się znajduje w Sieci"<<endl;//Sklep jest juz w Sieci, nic nie robimy
 
 }
 void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
     if (Si->czy_Sklep_w_Sieci(Sk)) {
         Si->usun_Sklep(Sk);
         Sk->ustaw_Siec(nullptr);
-        print("Z Sieci został usunięty Sklep");
+        cout<<"Z Sieci został usunięty Sklep"<<endl;
     }
 }
+
 
 
 
@@ -84,9 +83,9 @@ int main() {
     Siec Ross(17.5);
     Sklep Pulawska(17, 18);
 
-//    dodaj_Siec_Sklep(&Ross, &Pulawska);
+    dodaj_Siec_Sklep(&Ross, &Pulawska);
 //    usun_Siec_Sklep(&Ross, &Pulawska);
-//    dodaj_Siec_Sklep(&Ross, &Pulawska);
+    dodaj_Siec_Sklep(&Ross, &Pulawska);
 
 
 //    Sklep Niepodleglosci(20.5, -31);
