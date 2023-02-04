@@ -7,8 +7,9 @@
 //Siec::Siec(float _marza) {
 //
 //}
-bool Siec::sprawdz_Towar(string nazwa) {
-    return false;
+tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
+    tuple<string , float, int> wynik = make_tuple("", 0, 0);
+    return wynik;
 }
 
 bool Siec::sprzedaj_Towar(string nazwa, unsigned int ilosc) {

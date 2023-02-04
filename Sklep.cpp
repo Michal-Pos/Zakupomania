@@ -8,6 +8,8 @@
 
 
 
+
+
 void Sklep::dodaj_Towar(Towar* T) {
     cout<<"dodano towar "<<T->daj_nazwe()<<" w ilości: "<<T->daj_ilosc()<<endl;
     for (Towar* t: towary){
@@ -34,16 +36,18 @@ void Sklep::wypisz_stan() {
 }
 
 
-bool Sklep::sprawdz_Towar(string nazwa){
+tuple<string , float, unsigned int> Sklep::sprawdz_Towar(string nazwa){
     cout<<"--Sprawdzam sklep dla towaru: "<<nazwa<<"--"<<endl;
     for (Towar* t: towary){
         if (t->daj_nazwe()==nazwa){
             cout<<"W sklepie znajduje się "<< t->daj_nazwe()<<" w ilości "<<t->daj_ilosc()<<endl;
-            return true;
+            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), t->daj_cene(), t->daj_ilosc());
+            return wynik;
         };
     }
     cout<<"W sklepie nie ma "<<nazwa<<endl;
-    return false;
+    tuple<string , float, int> wynik = make_tuple("", 0, 0);
+    return wynik;
 }
 
 bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
@@ -55,6 +59,48 @@ bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
     }
     return false;
 }
+
+//skończyłeś tutaj
+//tuple<char, float, int> Sklep::daj_najdrozszy(){
+//    if (!towary.empty()){
+//        Towar* najdr_Towar = towary.front();
+//        tuple<string, float, int> najdro = tuple<string, float, int>(najdr_Towar->daj_nazwe(), najdr_Towar->daj_cene(), najdr_Towar->daj_ilosc());
+//        float najdro = najdr_Towar->daj_cene();
+//
+//        for (Towar* T: towary){
+//            if (T->daj_cene()>najdro){
+//                najdro = T->daj_cene();
+//                najdr_Towar = T;
+//            }
+//        }
+//        najdr_Towar->ustaw_ilosc(najdr_Towar->daj_ilosc() - 1);
+//        return najdro;
+//
+//    }
+//    return false;
+//
+//}
+//}
+
+bool Sklep::sprzedaj_najdro_Towar() {
+    if (!towary.empty()){
+        Towar* najdr_Towar = towary.front();
+        float najdro = najdr_Towar->daj_cene();
+
+        for (Towar* T: towary){
+            if (T->daj_cene()>najdro){
+                najdro = T->daj_cene();
+                najdr_Towar = T;
+            }
+        }
+        najdr_Towar->ustaw_ilosc(najdr_Towar->daj_ilosc() - 1);
+        return true;
+
+    }
+    return false;
+
+    }
+
 
 bool Sklep::ustaw_Siec(Siec *S) {
     this->siec = S;

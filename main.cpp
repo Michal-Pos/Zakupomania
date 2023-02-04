@@ -82,8 +82,8 @@ int main() {
     Siec Ross(17.5);
     Sklep Pulawska(17, 18);
 
-    dodaj_Siec_Sklep(&Ross, &Pulawska);
-    usun_Siec_Sklep(&Ross, &Pulawska);
+//    dodaj_Siec_Sklep(&Ross, &Pulawska);
+//    usun_Siec_Sklep(&Ross, &Pulawska);
 //    dodaj_Siec_Sklep(&Ross, &Pulawska);
 
 
@@ -91,13 +91,14 @@ int main() {
 //    Pulawska.dodaj_Towar(&T1);
 //    Pulawska.dodaj_Towar(&T2);
     cout<<"Pulawska"<<endl;
-//    Pulawska.wypisz_stan();
+    Pulawska.wypisz_stan();
 //    cout<<"Niepodległosci"<<endl;
 //    Niepodleglosci.wypisz_stan();
 
-//    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
-//    wygeneruj_asortyment(&Pulawska);
-//    Pulawska.wypisz_stan();
+    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
+    wygeneruj_asortyment(&Pulawska);
+    Pulawska.sprzedaj_Towar("Chleb", 2);
+    Pulawska.wypisz_stan();
 //
 ////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
 //    wygeneruj_asortyment(&Pulawska);

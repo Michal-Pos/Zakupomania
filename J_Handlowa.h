@@ -9,13 +9,15 @@
 #include <vector>
 #include <algorithm>
 #include <string>
+#include <tuple>
+using namespace std;
 
 class Siec;
 class Sklep;
 class J_Handlowa {
 
 public:
-    virtual bool sprawdz_Towar(string nazwa)=0;
+    virtual tuple<string, float, unsigned int> sprawdz_Towar(string nazwa)=0;
     virtual bool sprzedaj_Towar(string nazwa, unsigned int ilosc)=0;
 
 

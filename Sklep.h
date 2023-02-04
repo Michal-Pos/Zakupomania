@@ -8,6 +8,7 @@
 #include "Towar.h"
 #include "J_Handlowa.h"
 #include "Mieszkaniec.h"
+#include <tuple>
 using namespace std;
 
 class Sklep:J_Handlowa{
@@ -17,8 +18,10 @@ private:
     Siec* siec = nullptr;
     float x,y;
 public:
-    bool sprawdz_Towar(string nazwa);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
+
+    bool sprzedaj_najdro_Towar();
+    tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
 
