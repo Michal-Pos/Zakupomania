@@ -16,10 +16,10 @@ void Sklep::dodaj_Towar(Towar* T) {
 
         if (t->daj_nazwe()==T->daj_nazwe()){
             t->ustaw_ilosc(t->daj_ilosc()+T->daj_ilosc());
-            return;
+            return; //zwiększenie ilości towaru
         };
     }
-    towary.push_back(T);
+    towary.push_back(T); //dodanie nowego towaru
 
 }
 
@@ -50,6 +50,7 @@ tuple<string , float, unsigned int> Sklep::sprawdz_Towar(string nazwa){
     return wynik;
 }
 
+
 bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
     for (Towar* T: towary){
         if (T->daj_nazwe()==nazwa && T->daj_ilosc()>=ilosc){
@@ -61,26 +62,27 @@ bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
 }
 
 //skończyłeś tutaj
-//tuple<char, float, int> Sklep::daj_najdrozszy(){
-//    if (!towary.empty()){
-//        Towar* najdr_Towar = towary.front();
-//        tuple<string, float, int> najdro = tuple<string, float, int>(najdr_Towar->daj_nazwe(), najdr_Towar->daj_cene(), najdr_Towar->daj_ilosc());
-//        float najdro = najdr_Towar->daj_cene();
-//
-//        for (Towar* T: towary){
-//            if (T->daj_cene()>najdro){
-//                najdro = T->daj_cene();
-//                najdr_Towar = T;
-//            }
-//        }
-//        najdr_Towar->ustaw_ilosc(najdr_Towar->daj_ilosc() - 1);
-//        return najdro;
-//
-//    }
-//    return false;
-//
-//}
-//}
+tuple<string, float, unsigned int> Sklep::daj_najdrozszy(){
+    if (!towary.empty()){
+
+        Towar* najdr_Towar = towary.front();
+        float najw_cena = najdr_Towar->daj_cene();
+
+        for (Towar* T: towary){
+            if (T->daj_cene()>najw_cena){
+                najw_cena = T->daj_cene();
+                najdr_Towar = T;
+            }
+        }
+        tuple<string, float, unsigned int> najdro = tuple<string, float, unsigned int>(najdr_Towar->daj_nazwe(), najdr_Towar->daj_cene(), najdr_Towar->daj_ilosc());
+
+        return najdro;
+    }
+    tuple<string, float, unsigned int> najdro = tuple<string, float, unsigned int>("",0,0);
+    return najdro;
+
+}
+
 
 bool Sklep::sprzedaj_najdro_Towar() {
     if (!towary.empty()){

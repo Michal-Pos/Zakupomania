@@ -99,6 +99,8 @@ int main() {
     wygeneruj_asortyment(&Pulawska);
     Pulawska.sprzedaj_Towar("Chleb", 2);
     Pulawska.wypisz_stan();
+    tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();
+    cout<<get<0>(naj)<<endl;
 //
 ////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
 //    wygeneruj_asortyment(&Pulawska);

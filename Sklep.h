@@ -21,7 +21,10 @@ public:
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
 
     bool sprzedaj_najdro_Towar();
+
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
+    tuple<string, float, unsigned int> daj_najdrozszy();
+
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
 
