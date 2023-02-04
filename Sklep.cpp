@@ -83,6 +83,25 @@ tuple<string, float, unsigned int> Sklep::daj_najdrozszy(){
 
 }
 
+tuple<string, float, unsigned int> Sklep::daj_najtanszy() {
+    if (!towary.empty()){
+
+        Towar* najt_Towar = towary.front();
+        float najni_cena = najt_Towar->daj_cene();
+
+        for (Towar* T: towary){
+            if (T->daj_cene()<najni_cena){
+                najni_cena = T->daj_cene();
+                najt_Towar = T;
+            }
+        }
+        tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>(najt_Towar->daj_nazwe(), najt_Towar->daj_cene(), najt_Towar->daj_ilosc());
+
+        return wynik;
+    }
+    tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>("",0,0);
+    return wynik;
+}
 
 bool Sklep::sprzedaj_najdro_Towar() {
     if (!towary.empty()){

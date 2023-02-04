@@ -33,6 +33,8 @@ void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
     }
 }
 
+
+
 void Mieszkaniec_kupuje(Mieszkaniec* M, string nazwa, Sklep* S){
     S->sprawdz_Towar(nazwa);
 
@@ -101,6 +103,8 @@ int main() {
     Pulawska.wypisz_stan();
     tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();
     cout<<get<0>(naj)<<endl;
+    tuple<string, float, unsigned int> najt = Pulawska.daj_najtanszy();
+    cout<<get<0>(najt)<<endl;
 //
 ////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
 //    wygeneruj_asortyment(&Pulawska);

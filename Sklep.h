@@ -24,6 +24,8 @@ public:
 
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     tuple<string, float, unsigned int> daj_najdrozszy();
+    tuple<string, float, unsigned int> daj_najtanszy();
+
 
     void dodaj_Towar(Towar* T);
     void wypisz_stan();
