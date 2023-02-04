@@ -17,6 +17,8 @@ private:
     vector<Towar*> towary = {};
     Siec* siec = nullptr;
     float x,y;
+    // settery
+    bool ustaw_Siec(Siec* S);
 public:
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
 
@@ -40,10 +42,6 @@ public:
 //    float daj_marze();
 
 
-    // settery
-    bool ustaw_Siec(Siec* S);
-    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
-    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
 
 
     Sklep(float _x, float _y): x(_x),y(_y){}

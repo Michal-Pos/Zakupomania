@@ -15,22 +15,20 @@ class Siec: public J_Handlowa{
 private:
     vector<Sklep*> lista_sklepow;
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
+    bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
+    bool usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
 
 public:
+    //gettery
+    double daj_marza()const {return marza;}
+    // metody
+    bool przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
+    bool czy_Sklep_w_Sieci(Sklep* S);
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
 
-    //gettery
-    double daj_marza()const {return marza;}
-
-    bool przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
-    bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
-    bool usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
-    bool czy_Sklep_w_Sieci(Sklep* S);
-
     //Konstruktor
     Siec(double _marza): marza(_marza){};
-
     virtual ~Siec() = default;
 
     //techniczne

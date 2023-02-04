@@ -130,26 +130,6 @@ bool Sklep::ustaw_Siec(Siec *S) {
 
 
 
-//float Sklep::daj_marze() {
-//    if (siec){
-//        return siec->daj_marza();
-//    }
-//    return 0;
-//}
-
-//Towar* Sklep::daj_Towar(string nazwa){
-//    if (sprawdz_Towar(nazwa)){
-//
-//    }
-//}
-//
-//double Sklep::daj_naleznosc(string nazwa){
-//    if (sprawdz_Towar(nazwa)){
-//        if (siec){
-//
-//        }
-//    }
-//}
 //
 //
 //

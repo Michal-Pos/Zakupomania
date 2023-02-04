@@ -7,6 +7,8 @@
 #include <string>
 #include <random>
 #include<cstdlib>
+
+
 using namespace std;
 
 void print(string txt){
@@ -16,21 +18,22 @@ void print(string txt){
 void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
 
     if (!Si->czy_Sklep_w_Sieci(Sk)){// Jesli sklep znajduje się w Sieci
-        cout<<"Do Sieci dodano Sklep"<<endl;
-        Si->dodaj_Sklep(Sk);
-        Sk->ustaw_Siec(Si);
+        if (Si->dodaj_Sklep(Sk) && Sk->ustaw_Siec(Si)) cout<<"Do Sieci  poprawnie dodano Sklep"<<endl;
+        else
+            cout<<"wystąpił błąd, nie udało się dodac sklepu do sieci "<<endl;
     }else
         cout<<"Sklep już się znajduje w Sieci"<<endl;//Sklep jest juz w Sieci, nic nie robimy
 
 }
 void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
     if (Si->czy_Sklep_w_Sieci(Sk)) {
-        Si->usun_Sklep(Sk);
-        Sk->ustaw_Siec(nullptr);
-        cout<<"Z Sieci został usunięty Sklep"<<endl;
+        if (Si->usun_Sklep(Sk) && Sk->ustaw_Siec(nullptr)) cout<<"Z Sieci został poprawnie usunięty Sklep"<<endl;
+        else
+            cout<<"wystąpił błąd, nie udało się poprawnie usunąc Sklepu z Sieci "<<endl;
     }
-}
+    else print("Sklep nie znajduje się w sieci, nie można go usunąć");
 
+}
 
 
 
@@ -84,8 +87,8 @@ int main() {
     Sklep Pulawska(17, 18);
 
     dodaj_Siec_Sklep(&Ross, &Pulawska);
-//    usun_Siec_Sklep(&Ross, &Pulawska);
-    dodaj_Siec_Sklep(&Ross, &Pulawska);
+    usun_Siec_Sklep(&Ross, &Pulawska);
+//    dodaj_Siec_Sklep(&Ross, &Pulawska);
 
 
 //    Sklep Niepodleglosci(20.5, -31);
