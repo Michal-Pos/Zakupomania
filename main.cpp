@@ -108,6 +108,8 @@ int main() {
 
     cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
     wygeneruj_asortyment(&Pulawska);
+    Ross.sprawdz_Towar("Chleb");
+
     Pulawska.sprzedaj_Towar("Chleb", 2);
     Pulawska.wypisz_stan();
     tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();

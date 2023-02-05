@@ -8,17 +8,23 @@
 //
 //}
 tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
+    if (!lista_sklepow.empty()){
+        for (Sklep* S: lista_sklepow){
+            if (get<2>(S->sprawdz_Towar(nazwa))>0){
+                tuple<string, float, unsigned int> wynik = S->sprawdz_Towar(nazwa);
+                cout<<"W Sieci jest Sklep z "<<nazwa<<" w ilości "<<get<2>(wynik)<<endl;
+                return wynik;
+            }
+        }
+        cout<<"W Sieci nie ma Sklepu z "<<nazwa<<endl;
+    } else cout<<"W Sieci nie ma sklepów, nie można sprawdzić towarów"<<endl;
+
+
     tuple<string , float, int> wynik = make_tuple("", 0, 0);
     return wynik;
 }
 
-bool Siec::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
-    return true;
-}
 
-bool Siec::przejmij_Siec(Siec *S) {
-    return true;
-}
 
 bool Siec::dodaj_Sklep(Sklep *S) {
     if (czy_Sklep_w_Sieci(S)){
