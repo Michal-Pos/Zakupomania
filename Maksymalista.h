@@ -9,7 +9,7 @@
 
 class Maksymalista: public Wierny {
 public:
-    bool kup(Sklep* S);
+    bool kup();
     Maksymalista(Sklep* S, float _x, float _y, double _budzet): Wierny(S,_budzet , _x, _y){}
 
     Maksymalista(const Maksymalista&) = default;

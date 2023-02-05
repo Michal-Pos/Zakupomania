@@ -92,8 +92,9 @@ int main() {
     Siec Ross(17.5);
     Sklep Pulawska(17, 18);
 
+
     dodaj_Siec_Sklep(&Ross, &Pulawska);
-    usun_Siec_Sklep(&Ross, &Pulawska);
+//    usun_Siec_Sklep(&Ross, &Pulawska);
 //    dodaj_Siec_Sklep(&Ross, &Pulawska);
 
 
@@ -110,9 +111,11 @@ int main() {
     Pulawska.sprzedaj_Towar("Chleb", 2);
     Pulawska.wypisz_stan();
     tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();
-    cout<<get<0>(naj)<<endl;
+    cout<<"Najdroższy: "<<get<0>(naj)<<endl;
     tuple<string, float, unsigned int> najt = Pulawska.daj_najtanszy();
-    cout<<get<0>(najt)<<endl;
+    cout<<"Najtańszy: "<<get<0>(najt)<<endl;
+    cout<<get<1>(Pulawska.sprawdz_Towar("Chleb"))<<endl;
+
 //
 ////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
 //    wygeneruj_asortyment(&Pulawska);

@@ -33,9 +33,9 @@ void Sklep::wypisz_stan() {
     }
 
 }
-float Sklep::uwzględnij_marze(float stara_cena) {
+float Sklep::uwzglednij_marze(float stara_cena) {
     if (siec!= nullptr){
-        return stara_cena*(1 + siec->daj_marza());
+        return stara_cena*(1 + siec->daj_marza()/100);
     }
     return stara_cena;
 }
@@ -46,7 +46,7 @@ tuple<string , float, unsigned int> Sklep::sprawdz_Towar(string nazwa){
     for (Towar* t: towary){
         if (t->daj_nazwe()==nazwa){
             cout<<"W sklepie znajduje się "<< t->daj_nazwe()<<" w ilości "<<t->daj_ilosc()<<endl;
-            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), t->daj_cene(), t->daj_ilosc());
+            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), uwzglednij_marze(t->daj_cene()), t->daj_ilosc());
             return wynik;
         };
     }
@@ -71,15 +71,15 @@ tuple<string, float, unsigned int> Sklep::daj_najdrozszy(){
     if (!towary.empty()){
 
         Towar* najdr_Towar = towary.front();
-        float najw_cena = najdr_Towar->daj_cene();
+        float najw_cena = uwzglednij_marze(najdr_Towar->daj_cene());
 
         for (Towar* T: towary){
             if (T->daj_cene()>najw_cena){
-                najw_cena = T->daj_cene();
+                najw_cena = uwzglednij_marze(T->daj_cene());
                 najdr_Towar = T;
             }
         }
-        tuple<string, float, unsigned int> najdro = tuple<string, float, unsigned int>(najdr_Towar->daj_nazwe(), najdr_Towar->daj_cene(), najdr_Towar->daj_ilosc());
+        tuple<string, float, unsigned int> najdro = tuple<string, float, unsigned int>(najdr_Towar->daj_nazwe(), najw_cena, najdr_Towar->daj_ilosc());
 
         return najdro;
     }

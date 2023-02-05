@@ -22,7 +22,7 @@ private:
     bool ustaw_Siec(Siec* S);
 public:
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
-    float uwzględnij_marze(float stara_cena);
+    float uwzglednij_marze(float stara_cena);
 
 
     bool sprzedaj_najdro_Towar();
