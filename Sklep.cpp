@@ -110,23 +110,47 @@ tuple<string, float, unsigned int> Sklep::daj_najtanszy() {
     return wynik;
 }
 
-bool Sklep::sprzedaj_najdro_Towar() {
-    if (!towary.empty()){
-        Towar* najdr_Towar = towary.front();
-        float najdro = najdr_Towar->daj_cene();
+//tuple<string, float, unsigned int> Sklep::daj_losowy() {
+//    if (!towary.empty()){
+//
+//        Towar* najt_Towar = towary.front();
+//        float najni_cena = najt_Towar->daj_cene();
+//
+//        for (Towar* T: towary){
+//            if (T->daj_cene()<najni_cena && T->daj_ilosc()>0){
+//                najni_cena = T->daj_cene();
+//                najt_Towar = T;
+//            }
+//        }
+//        tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>(najt_Towar->daj_nazwe(), najt_Towar->daj_cene(), najt_Towar->daj_ilosc());
+//
+//        return wynik;
+//    }
+//    tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>("",0,0);
+//    return wynik;
+//}
 
-        for (Towar* T: towary){
-            if (T->daj_cene()>najdro){
-                najdro = T->daj_cene();
-                najdr_Towar = T;
-            }
-        }
-        najdr_Towar->ustaw_ilosc(najdr_Towar->daj_ilosc() - 1);
-        return true;
 
-    }
-    return false;
-    }
+
+
+
+//bool Sklep::sprzedaj_najdro_Towar() {
+//    if (!towary.empty()){
+//        Towar* najdr_Towar = towary.front();
+//        float najdro = najdr_Towar->daj_cene();
+//
+//        for (Towar* T: towary){
+//            if (T->daj_cene()>najdro){
+//                najdro = T->daj_cene();
+//                najdr_Towar = T;
+//            }
+//        }
+//        najdr_Towar->ustaw_ilosc(najdr_Towar->daj_ilosc() - 1);
+//        return true;
+//
+//    }
+//    return false;
+//    }
 
 
 bool Sklep::ustaw_Siec(Siec *S) {

@@ -10,9 +10,17 @@
 
 
 class Losowy: public Wierny {
+private:
+    unsigned int proby = 3;
 public:
-    Losowy() = default;
+    bool kup();
+    Losowy(Sklep* S, float _x, float _y, double _budzet): Wierny(S,_budzet , _x, _y){}
+
+    Losowy(const Losowy&) = default;
+    Losowy& operator=(const Losowy&) = default;// kopiowanie obiektu
     ~Losowy() = default;
+    Losowy(Losowy&&) = default;
+    Losowy& operator=(Losowy&&) = default;
 };
 
 

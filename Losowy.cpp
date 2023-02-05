@@ -3,3 +3,7 @@
 //
 
 #include "Losowy.h"
+
+bool Losowy::kup() {
+    return false;
+}
