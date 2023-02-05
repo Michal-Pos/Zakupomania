@@ -11,8 +11,8 @@
 #include <string>
 #include <tuple>
 using namespace std;
-class Siec;
 class Sklep;
+class Siec;
 class J_Handlowa {
 public:
     virtual tuple<string, float, unsigned int> sprawdz_Towar(string nazwa)=0;

@@ -8,12 +8,10 @@
 #include "Wierny.h"
 
 class Maksymalista: public Wierny {
-private:
-    float x,y;
-    double budzet;
 public:
+    bool kup(Sklep* S);
+    Maksymalista(Sklep* S, float _x, float _y, double _budzet): Wierny(S,_budzet , _x, _y){}
 
-    Maksymalista(float _x, float _y, double _budzet);
     Maksymalista(const Maksymalista&) = default;
     Maksymalista& operator=(const Maksymalista&) = default;// kopiowanie obiektu
     ~Maksymalista() = default;

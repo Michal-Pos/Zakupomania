@@ -20,7 +20,7 @@ private:
 
 public:
     //gettery
-    double daj_marza()const {return marza;}
+    double daj_marza() const {return marza;}
     // metody
     bool przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
     bool czy_Sklep_w_Sieci(Sklep* S);

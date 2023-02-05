@@ -12,11 +12,11 @@ protected:
     float x,y;
     double budzet;
 public:
-    virtual void kup_Towar(Towar* T);
+    virtual void kup_Towar(string nazwa);
 
     double daj_budzet() {return budzet;}
 
-    Mieszkaniec(double _budzet, float _x, float _y);
+    Mieszkaniec(double _budzet, float _x, float _y): budzet(_budzet), x(_x), y(_y){};
 
     Mieszkaniec(const Mieszkaniec&) = default;
     Mieszkaniec& operator=(const Mieszkaniec&) = default;

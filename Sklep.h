@@ -7,6 +7,7 @@
 #include <vector>
 #include "Towar.h"
 #include "J_Handlowa.h"
+#include "Siec.h"
 #include "Mieszkaniec.h"
 #include <tuple>
 using namespace std;
@@ -15,12 +16,14 @@ class Sklep:J_Handlowa{
 private:
     //+marża jako atrybut w przypadku dziedziczenia z klasy Sieć
     vector<Towar*> towary = {};
-    Siec* siec = nullptr;
+    Siec* siec;
     float x,y;
     // settery
     bool ustaw_Siec(Siec* S);
 public:
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
+    float uwzględnij_marze(float stara_cena);
+
 
     bool sprzedaj_najdro_Towar();
 
@@ -41,10 +44,7 @@ public:
 
 //    float daj_marze();
 
-
-
-
-    Sklep(float _x, float _y): x(_x),y(_y){}
+    Sklep(float _x, float _y): x(_x),y(_y), siec(nullptr){}
 
 
     virtual ~Sklep() = default;

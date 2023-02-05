@@ -3,3 +3,7 @@
 //
 
 #include "Maksymalista.h"
+
+//bool Maksymalista::kup(Sklep* S) {
+//
+//}

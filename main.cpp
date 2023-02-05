@@ -37,6 +37,12 @@ void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
 
 
 
+//void sprzedaj_Towar(Mieszkaniec* M, Sklep){
+//    if (Mieszkaniec.zapytaj_Towar(Sklep))
+//}
+
+
+
 void Mieszkaniec_kupuje(Mieszkaniec* M, string nazwa, Sklep* S){
     S->sprawdz_Towar(nazwa);
 

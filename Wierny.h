@@ -13,8 +13,8 @@ protected:
     float x, y;
     double marza;
 public:
-
-    Wierny(Sklep* Sk,double _budzet , float _x, float _y): Mieszkaniec(_budzet,_x,_y){}
+//    void kup_Towar(string nazwa);
+    Wierny(Sklep* Sk,double _budzet , float _x, float _y): Mieszkaniec(_budzet,_x,_y), ulubiony(Sk){}
 
     Wierny(const Wierny&) = default;
     Wierny& operator=(const Wierny&) = default;

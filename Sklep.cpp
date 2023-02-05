@@ -13,7 +13,6 @@
 void Sklep::dodaj_Towar(Towar* T) {
     cout<<"dodano towar "<<T->daj_nazwe()<<" w ilości: "<<T->daj_ilosc()<<endl;
     for (Towar* t: towary){
-
         if (t->daj_nazwe()==T->daj_nazwe()){
             t->ustaw_ilosc(t->daj_ilosc()+T->daj_ilosc());
             return; //zwiększenie ilości towaru
@@ -33,6 +32,12 @@ void Sklep::wypisz_stan() {
         cout<<"----------------------"<<endl;
     }
 
+}
+float Sklep::uwzględnij_marze(float stara_cena) {
+    if (siec!= nullptr){
+        return stara_cena*(1 + siec->daj_marza());
+    }
+    return stara_cena;
 }
 
 
@@ -119,7 +124,6 @@ bool Sklep::sprzedaj_najdro_Towar() {
 
     }
     return false;
-
     }
 
 
