@@ -12,6 +12,7 @@ private:
     float x,y;
     double budzet;
 public:
+    bool kup();
     Minimalista(Sklep* Sk, float _budzet, float _x, float _y): Wierny(Sk,_budzet, _x, _y){};
 
     //techniczne

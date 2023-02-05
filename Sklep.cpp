@@ -5,7 +5,7 @@
 #include "Sklep.h"
 #include <string>
 #include <iostream>
-
+#include <cmath>
 
 
 
@@ -35,7 +35,7 @@ void Sklep::wypisz_stan() {
 }
 float Sklep::uwzglednij_marze(float stara_cena) {
     if (siec!= nullptr){
-        return stara_cena*(1 + siec->daj_marza()/100);
+        return stara_cena*(ceil(1 + siec->daj_marza())/100);
     }
     return stara_cena;
 }
@@ -60,8 +60,10 @@ bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
     for (Towar* T: towary){
         if (T->daj_nazwe()==nazwa && T->daj_ilosc()>=ilosc){
             T->ustaw_ilosc(T->daj_ilosc()-ilosc);
+            cout<<"Sprzedano "<<nazwa<<" w ilości "<<ilosc<<endl;
             return true;
         }
+        cout<<"W sklepie nie ma wystarczającej ilości"<<nazwa<<", obecnie znajduje się"<<ilosc<<endl;
     }
     return false;
 }
@@ -74,7 +76,7 @@ tuple<string, float, unsigned int> Sklep::daj_najdrozszy(){
         float najw_cena = uwzglednij_marze(najdr_Towar->daj_cene());
 
         for (Towar* T: towary){
-            if (T->daj_cene()>najw_cena){
+            if (T->daj_cene()>najw_cena && T->daj_ilosc()>0){
                 najw_cena = uwzglednij_marze(T->daj_cene());
                 najdr_Towar = T;
             }
@@ -95,7 +97,7 @@ tuple<string, float, unsigned int> Sklep::daj_najtanszy() {
         float najni_cena = najt_Towar->daj_cene();
 
         for (Towar* T: towary){
-            if (T->daj_cene()<najni_cena){
+            if (T->daj_cene()<najni_cena && T->daj_ilosc()>0){
                 najni_cena = T->daj_cene();
                 najt_Towar = T;
             }
