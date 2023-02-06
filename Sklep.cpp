@@ -110,25 +110,18 @@ tuple<string, float, unsigned int> Sklep::daj_najtanszy() {
     return wynik;
 }
 
-//tuple<string, float, unsigned int> Sklep::daj_losowy() {
-//    if (!towary.empty()){
-//
-//        Towar* najt_Towar = towary.front();
-//        float najni_cena = najt_Towar->daj_cene();
-//
-//        for (Towar* T: towary){
-//            if (T->daj_cene()<najni_cena && T->daj_ilosc()>0){
-//                najni_cena = T->daj_cene();
-//                najt_Towar = T;
-//            }
-//        }
-//        tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>(najt_Towar->daj_nazwe(), najt_Towar->daj_cene(), najt_Towar->daj_ilosc());
-//
-//        return wynik;
-//    }
-//    tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>("",0,0);
-//    return wynik;
-//}
+tuple<string, float, unsigned int> Sklep::daj_losowy() {
+
+    if (!towary.empty()){
+        int random_indeks = rand() % towary.size();
+        Towar* T = towary[random_indeks];
+        tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>(T->daj_nazwe(), T->daj_cene(), T->daj_ilosc());
+
+        return wynik;
+    }
+    tuple<string, float, unsigned int> wynik = tuple<string, float, unsigned int>("",0,0);
+    return wynik;
+}
 
 
 

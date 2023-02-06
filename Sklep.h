@@ -30,6 +30,7 @@ public:
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     tuple<string, float, unsigned int> daj_najdrozszy();
     tuple<string, float, unsigned int> daj_najtanszy();
+    tuple<string, float, unsigned int> daj_losowy();
 
     friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
     friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
