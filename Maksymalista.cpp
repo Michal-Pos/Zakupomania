@@ -19,8 +19,4 @@ bool Maksymalista::kup() {
     }else cout<<"Sklep znajduje się w Sieci, nie mozna w nim kupic towaru"<<endl;
     return false;
 
-
-
-    return false;
-
 }
