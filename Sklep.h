@@ -42,6 +42,7 @@ public:
     //gettery
     float daj_x() const{return x;}
     float daj_y() const {return y;}
+    bool czy_w_Sieci();
 
 //    float daj_marze();
 

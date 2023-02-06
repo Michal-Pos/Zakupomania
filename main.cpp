@@ -37,6 +37,7 @@ void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
 
 
 
+
 //void sprzedaj_Towar(Mieszkaniec* M, Sklep){
 //    if (Mieszkaniec.zapytaj_Towar(Sklep))
 //}
