@@ -82,3 +82,6 @@
 19	1097	6973841838801477	CMakeFiles/Zaliczeniowy.dir/Sklep.cpp.obj	7d9cd3c1ddb3bbc8
 5	1165	6973841839474911	CMakeFiles/Zaliczeniowy.dir/main.cpp.obj	f8a2fe7e3bd06634
 1165	1334	6973841841121652	Zaliczeniowy.exe	fd204c92d9d9e6f6
+11	514	6973845191983632	CMakeFiles/Zaliczeniowy.dir/Maksymalista.cpp.obj	c981aec228b24c5c
+4	516	6973845191983632	CMakeFiles/Zaliczeniowy.dir/Minimalista.cpp.obj	7989b0d65a6e55b2
+516	734	6973845194164580	Zaliczeniowy.exe	fd204c92d9d9e6f6
