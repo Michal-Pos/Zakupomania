@@ -35,6 +35,22 @@ void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
 
 }
 
+bool przejmij_Siec(Siec *S_przejmujaca, Siec *S_przejmowana) {
+    if (S_przejmujaca!=S_przejmowana){
+        for (Sklep* sk: S_przejmowana->lista_sklepow){
+            usun_Siec_Sklep(S_przejmowana, sk);
+            dodaj_Siec_Sklep(S_przejmujaca, sk);
+        }
+        return true;
+    }
+    print("Zła instrukcja wejścia, Siec przejmująca i przejmowana są tymi samymi sieciami");
+    return false;
+}
+
+
+
+
+
 
 
 
@@ -92,7 +108,6 @@ int main() {
 //    T2.wypisz_stan();
     Siec Ross(17.5);
     Sklep Pulawska(17, 18);
-
 
     dodaj_Siec_Sklep(&Ross, &Pulawska);
 //    usun_Siec_Sklep(&Ross, &Pulawska);

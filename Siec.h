@@ -22,7 +22,7 @@ public:
     //gettery
     double daj_marza() const {return marza;}
     // metody
-    bool przejmij_Siec(Siec* S);//przejmuje Sieć wraz ze sklepami
+    friend bool przejmij_Siec(Siec* S_przejmujaca,Siec* S_przejmowana);//przejmuje Sieć wraz ze sklepami
     bool czy_Sklep_w_Sieci(Sklep* S);
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
