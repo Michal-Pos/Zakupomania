@@ -26,6 +26,7 @@ public:
     bool czy_Sklep_w_Sieci(Sklep* S);
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
+    bool czy_Siec(){return true;}
 
     //Konstruktor
     Siec(double _marza): marza(_marza){};

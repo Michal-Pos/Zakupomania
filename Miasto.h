@@ -21,7 +21,7 @@ public:
     bool dodaj_Mieszkanca(Mieszkaniec* M);
     //gettery
     vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
-    vector<J_Handlowa*> daj_handlowe() const{return lista_handlowych;}
+    vector<J_Handlowa*> daj_handlowe() const {return lista_handlowych;}
 
     //Konstruktor
     Miasto() = default; //zakładamy jedno miasto

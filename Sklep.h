@@ -44,6 +44,7 @@ public:
 
     float daj_y() const {return y;}
     bool czy_w_Sieci();
+    bool czy_Siec(){return true;}
 
 //    float daj_marze();
 

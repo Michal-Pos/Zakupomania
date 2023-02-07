@@ -5,9 +5,14 @@
 #ifndef ZALICZENIOWY_OSZCZEDNY_H
 #define ZALICZENIOWY_OSZCZEDNY_H
 #include "Poszukiwacz.h"
+#include "Miasto.h"
 
 class Oszczedny: public Poszukiwacz {
+private:
+    Sklep* znajdz_sklep(Miasto *M);
+public:
     bool kup();
+
     Oszczedny(float _x, float _y, double _budzet, string _szukany_T): Poszukiwacz(_budzet, _x, _y, _szukany_T){}
 
     Oszczedny(const Oszczedny&) = default;
