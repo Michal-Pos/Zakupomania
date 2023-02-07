@@ -21,6 +21,7 @@ private:
     // settery
     bool ustaw_Siec(Siec* S);
 public:
+
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
     float uwzglednij_marze(float stara_cena);
 
@@ -41,7 +42,6 @@ public:
 
     //gettery
     float daj_x() const{return x;}
-
     float daj_y() const {return y;}
     bool czy_w_Sieci();
     bool czy_Siec(){return true;}
