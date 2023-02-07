@@ -7,10 +7,14 @@
 #include "Poszukiwacz.h"
 
 class Oszczedny: public Poszukiwacz {
-    virtual void kup_Towar();
+    bool kup();
+    Oszczedny(float _x, float _y, double _budzet, string _szukany_T): Poszukiwacz(_budzet, _x, _y, _szukany_T){}
 
-    Oszczedny() = default;
+    Oszczedny(const Oszczedny&) = default;
+    Oszczedny& operator=(const Oszczedny&) = default;// kopiowanie obiektu
     ~Oszczedny() = default;
+    Oszczedny(Oszczedny&&) = default;
+    Oszczedny& operator=(Oszczedny&&) = default;
 };
 
 

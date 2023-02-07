@@ -10,8 +10,6 @@
 class Wierny: public Mieszkaniec{
 protected:
     Sklep* ulubiony;
-    float x, y;
-    double marza;
 public:
 //    void kup_Towar(string nazwa);
     Wierny(Sklep* Sk,double _budzet , float _x, float _y): Mieszkaniec(_budzet,_x,_y), ulubiony(Sk){}

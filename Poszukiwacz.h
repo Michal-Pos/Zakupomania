@@ -7,12 +7,17 @@
 #include "Mieszkaniec.h"
 
 class Poszukiwacz: public Mieszkaniec{
-
+protected:
+    string szukany_T;
 public:
-    void kup_Towar(){};
+    void kup_Towar(string nazwa);
+    Poszukiwacz(double _budzet , float _x, float _y, string _szuka_T): Mieszkaniec(_budzet,_x,_y), szukany_T(_szuka_T){}
 
-    Poszukiwacz()=default;
-    ~Poszukiwacz()=default;
+    Poszukiwacz(const Poszukiwacz&) = default;
+    Poszukiwacz& operator=(const Poszukiwacz&) = default;
+    virtual ~Poszukiwacz(){};
+    Poszukiwacz(Poszukiwacz&&) = default;
+    Poszukiwacz& operator=(Poszukiwacz&&) = default;
 };
 
 
