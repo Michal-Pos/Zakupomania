@@ -4,6 +4,6 @@
 
 #include "Poszukiwacz.h"
 
-void Poszukiwacz::kup_Towar(string nazwa) {
-    Mieszkaniec::kup_Towar(nazwa);
-}
+//void Poszukiwacz::kup_Towar(string nazwa) {
+//    Mieszkaniec::kup_Towar(nazwa);
+//}

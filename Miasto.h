@@ -12,13 +12,16 @@
 using namespace std;
 
 class Miasto {
-protected:
-    // Mieszkańcy będa mieli dostep, z kolei zmiana struktur w sieci też musi byc katalogowana
-    vector<J_Handlowa*> lista_sklepow; // Sklepy i sieci
 private:
-    vector<Mieszkaniec*> lista_mieszkancow;
+    vector<Mieszkaniec*> lista_mieszkancow = {};
+// Mieszkańcy będa mieli dostep, z kolei zmiana struktur w sieci też musi byc katalogowana
+    vector<J_Handlowa*> lista_handlowych = {}; // Sklepy i sieci
 public:
-    void dodaj_J_Handlowa(J_Handlowa* JH);
+    bool dodaj_J_Handlowa(J_Handlowa* JH);
+    bool dodaj_Mieszkanca(Mieszkaniec* M);
+    //gettery
+    vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
+    vector<J_Handlowa*> daj_handlowe() const{return lista_handlowych;}
 
     //Konstruktor
     Miasto() = default; //zakładamy jedno miasto
