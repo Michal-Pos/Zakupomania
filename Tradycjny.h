@@ -5,8 +5,12 @@
 #ifndef ZALICZENIOWY_TRADYCJNY_H
 #define ZALICZENIOWY_TRADYCJNY_H
 #include "Poszukiwacz.h"
+#include "Miasto.h"
 
 class Tradycjny: public Poszukiwacz{
+private:
+    float odleglosc(float x_sklepu, float y_sklepu);
+    Sklep* znajdz_najbliz(Miasto* M);
 public:
     bool kup();
 
