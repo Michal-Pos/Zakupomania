@@ -28,6 +28,7 @@ bool Miasto::dodaj_J_Handlowa(J_Handlowa *JH) {
 }
 
 void Miasto::wypisz_stan() {
+    cout<<"*******************"<<endl;
     cout<<"W mieście znajduje się: "<<endl;
     cout<<lista_mieszkancow.size()<<" mieszkańcow"<<endl;
     int sk = 0;
@@ -39,6 +40,8 @@ void Miasto::wypisz_stan() {
     }
     cout<<si<<" Sieci"<<endl;
     cout<<sk<<" samodzielnych Sklepów"<<endl;
+    cout<<"*******************"<<endl;
+
 
 
 }

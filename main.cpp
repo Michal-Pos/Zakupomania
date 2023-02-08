@@ -114,8 +114,12 @@ int main() {
 
     dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
     dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
-    Banacha.wypisz_stan();
-    Pierwsza_Siec.wypisz_stan();
+    Warszawa.dodaj_J_Handlowa(&Banacha);
+    Warszawa.dodaj_J_Handlowa(&Banacha);
+
+    Warszawa.wypisz_stan();
+//    Banacha.wypisz_stan();
+//    Pierwsza_Siec.wypisz_stan();
 
 
 

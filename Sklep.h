@@ -12,7 +12,7 @@
 #include <tuple>
 using namespace std;
 
-class Sklep:J_Handlowa{
+class Sklep:public J_Handlowa{
 private:
     //+marża jako atrybut w przypadku dziedziczenia z klasy Sieć
     vector<Towar*> towary = {};
