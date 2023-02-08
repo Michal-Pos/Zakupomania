@@ -12,7 +12,7 @@ protected:
     float x,y;
     double budzet;
 public:
-    virtual void kup_Towar(string nazwa);
+    virtual bool kup() = 0;
 
     double daj_budzet() {return budzet;}
 

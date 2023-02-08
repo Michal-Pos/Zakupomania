@@ -6,6 +6,7 @@
 #include <vector>
 #include <string>
 #include <random>
+#include "Tradycjny.h"
 #include<cstdlib>
 
 
@@ -115,7 +116,10 @@ int main() {
     dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
     dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
     Warszawa.dodaj_sklep(&Banacha);
-    Warszawa.dodaj_sklep(&Banacha);
+    Warszawa.dodaj_sklep(&Dolna);
+    Tradycjny Mirek(0,0,30,"Chleb");
+    Mirek.znajdz_najbliz(&Warszawa)->wypisz_stan();
+
 
     Warszawa.wypisz_stan();
 //    Banacha.wypisz_stan();

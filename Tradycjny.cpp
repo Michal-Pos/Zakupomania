@@ -22,6 +22,7 @@ Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
             sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
             if (get<2>(sprawdzany_Towar)>0){//czy towar dostępny w sklepie
                 odleg = nowa_odleg;
+
                 najblizszy_Sklep = Sk;
             }
             }
@@ -37,6 +38,10 @@ Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
 void Tradycjny::wypisz_stan() {
     cout<<"Tradycyjny"<<x<<" "<<y<<" "<<budzet<<endl;
 
+}
+
+bool Tradycjny::kup() {
+    return false;
 }
 
 //bool Tradycjny::kup() {
