@@ -17,6 +17,7 @@ class J_Handlowa {
 public:
     virtual tuple<string, float, unsigned int> sprawdz_Towar(string nazwa)=0;
     virtual bool czy_Siec()=0;
+    virtual void wypisz_stan()=0;
 //    virtual bool sprzedaj_Towar(string nazwa, unsigned int ilosc)=0;
 
 

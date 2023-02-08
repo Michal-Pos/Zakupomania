@@ -24,7 +24,12 @@ void Sklep::dodaj_Towar(Towar* T) {
 
 void Sklep::wypisz_stan() {
     cout<<"----------------------"<<endl;
-    cout<<"W sklepie są towary:"<<endl;
+    cout<<"Sklep: "<<x<<" "<<y<<endl;
+    cout<<"Czy w Sieci: ";
+    if (siec){
+        cout<<"Tak"<<endl;
+    } else cout<<"Nie"<<endl;
+    cout<<"Zasób Towarów:"<<endl;
     if (!towary.empty()){
         for (Towar* t:towary){
             t->wypisz_stan();

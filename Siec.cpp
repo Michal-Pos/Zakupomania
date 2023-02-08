@@ -31,7 +31,16 @@ tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
     return wynik;
 }
 
+void Siec::wypisz_stan() {
+    cout<<"........................"<<endl;
+    cout<<"Stan Sieci:"<<endl;
+    cout<<"Marża: "<<marza<<endl;
+    cout<<"Ilosc Sklepow: "<<lista_sklepow.size()<<endl;
+    for (Sklep* Sk:lista_sklepow){
+        Sk->wypisz_stan();
+    }
 
+}
 
 bool Siec::dodaj_Sklep(Sklep *S) {
     if (czy_Sklep_w_Sieci(S)){
