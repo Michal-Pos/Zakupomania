@@ -16,23 +16,18 @@ Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
     float nowa_odleg;
     tuple<string , float, unsigned int> sprawdzany_Towar;
     Sklep* najblizszy_Sklep = nullptr;
-    for (J_Handlowa* JH: M->daj_handlowe()){
-        if (!JH->czy_Siec()){ // kupujemy tylko w niezrzeszonych sklepach
-            Sklep* Sk  = reinterpret_cast<Sklep *>(JH);
-            if (Sk){// sprawdzamy czy rzutowanie się udało
-                nowa_odleg = odleglosc(Sk->daj_x(), Sk->daj_y());
-                if (nowa_odleg < odleg){// sprawdzamy czy odległość jest mniejsza
-                    sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
-                    if (get<2>(sprawdzany_Towar)>0){
-                        odleg = nowa_odleg;
-                        najblizszy_Sklep = Sk;
-                    }
-
-                }
+    for (Sklep* Sk: M->daj_sklepy()){
+        nowa_odleg = odleglosc(Sk->daj_x(), Sk->daj_y());
+        if (nowa_odleg < odleg){// sprawdzamy czy odległość jest mniejsza
+            sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
+            if (get<2>(sprawdzany_Towar)>0){//czy towar dostępny w sklepie
+                odleg = nowa_odleg;
+                najblizszy_Sklep = Sk;
+            }
             }
 
         }
-    }
+
     if (odleg!=INFINITY){
         return najblizszy_Sklep;
     } else return nullptr;

@@ -15,13 +15,13 @@ class Miasto {
 private:
     vector<Mieszkaniec*> lista_mieszkancow = {};
 // Mieszkańcy będa mieli dostep, z kolei zmiana struktur w sieci też musi byc katalogowana
-    vector<J_Handlowa*> lista_handlowych = {}; // Sklepy i sieci
+    vector<Sklep*> lista_sklepow = {}; // Sklepy i sieci
 public:
-    bool dodaj_J_Handlowa(J_Handlowa* JH);
+    bool dodaj_sklep(Sklep* Sk);
     bool dodaj_Mieszkanca(Mieszkaniec* M);
     //gettery
     vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
-    vector<J_Handlowa*> daj_handlowe() const {return lista_handlowych;}
+    vector<Sklep*> daj_sklepy() const {return lista_sklepow;}
     void wypisz_stan();
 
     //Konstruktor
