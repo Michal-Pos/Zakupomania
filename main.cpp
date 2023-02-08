@@ -11,6 +11,19 @@
 
 using namespace std;
 
+
+Miasto Warszawa();
+//   B  |    A
+//---------------
+//   C  |    D
+Sklep Agrykola(17, 18);
+Sklep Banacha(-19, 20);
+Sklep Chmielna(-17, -18);
+Sklep Dolna(4,-3);
+
+Siec Pierwsza_Siec(23);
+Siec Druga_Siec(8);
+
 void print(string txt){
     cout<<txt <<endl;
 }
@@ -18,7 +31,7 @@ void print(string txt){
 void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
 
     if (!Si->czy_Sklep_w_Sieci(Sk)){// Jesli sklep znajduje się w Sieci
-        if (Si->dodaj_Sklep(Sk) && Sk->ustaw_Siec(Si)) cout<<"Do Sieci  poprawnie dodano Sklep"<<endl;
+        if (Si->dodaj_Sklep(Sk) && Sk->ustaw_Siec(Si)) cout<<"Do Sieci  poprawnie dodano Sklep "<<Sk->daj_x()<<" "<<Sk->daj_y()<<endl;
         else
             cout<<"wystąpił błąd, nie udało się dodac sklepu do sieci "<<endl;
     }else
@@ -47,16 +60,6 @@ bool przejmij_Siec(Siec *S_przejmujaca, Siec *S_przejmowana) {
     return false;
 }
 
-
-
-
-
-
-
-
-//void sprzedaj_Towar(Mieszkaniec* M, Sklep){
-//    if (Mieszkaniec.zapytaj_Towar(Sklep))
-//}
 
 
 
@@ -96,51 +99,59 @@ Sklep* wygeneruj_asortyment(Sklep* S){
 }
 
 
+
+
+
 int main() {
-//    Towar T1(2,12,"Woda");
-//    T1.wypisz_stan();
-//    T1.ustaw_cene(12.5);
-//    T1.wypisz_stan();
+    wygeneruj_asortyment(&Agrykola);
+//    wygeneruj_asortyment(&Agrykola);
+    wygeneruj_asortyment(&Banacha);
+    wygeneruj_asortyment(&Chmielna);
+    wygeneruj_asortyment(&Dolna);
+    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
+    dodaj_Siec_Sklep(&Pierwsza_Siec, &Banacha);
 
-//    Towar T2(10,9,"Zioło");
-//    T2.wypisz_stan();
-//    T2.ustaw_cene(17);
-//    T2.wypisz_stan();
-    Siec Ross(17.5);
-    Sklep Pulawska(17, 18);
+    dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
+    dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
 
-    dodaj_Siec_Sklep(&Ross, &Pulawska);
-//    usun_Siec_Sklep(&Ross, &Pulawska);
+
+
+
+//    Siec Ross(17.5);
+//    Sklep Pulawska(17, 18);
+//
 //    dodaj_Siec_Sklep(&Ross, &Pulawska);
-
-
-//    Sklep Niepodleglosci(20.5, -31);
-//    Pulawska.dodaj_Towar(&T1);
-//    Pulawska.dodaj_Towar(&T2);
-    cout<<"Pulawska"<<endl;
-    Pulawska.wypisz_stan();
-//    cout<<"Niepodległosci"<<endl;
-//    Niepodleglosci.wypisz_stan();
-
-    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
-    wygeneruj_asortyment(&Pulawska);
-    Ross.sprawdz_Towar("Chleb");
-
-    Pulawska.sprzedaj_Towar("Chleb", 2);
-    Pulawska.wypisz_stan();
-    tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();
-    cout<<"Najdroższy: "<<get<0>(naj)<<endl;
-    tuple<string, float, unsigned int> najt = Pulawska.daj_najtanszy();
-    cout<<"Najtańszy: "<<get<0>(najt)<<endl;
-    cout<<get<1>(Pulawska.sprawdz_Towar("Chleb"))<<endl;
-
+////    usun_Siec_Sklep(&Ross, &Pulawska);
+////    dodaj_Siec_Sklep(&Ross, &Pulawska);
 //
-////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
-//    wygeneruj_asortyment(&Pulawska);
 //
-////    Towar* T = Pulawska.sprawdz_Towar("Zioło");
-////    Pulawska.sprzedaj_Towar(T);
+////    Sklep Niepodleglosci(20.5, -31);
+////    Pulawska.dodaj_Towar(&T1);
+////    Pulawska.dodaj_Towar(&T2);
+//    cout<<"Pulawska"<<endl;
 //    Pulawska.wypisz_stan();
+////    cout<<"Niepodległosci"<<endl;
+////    Niepodleglosci.wypisz_stan();
+//
+//    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
+//    wygeneruj_asortyment(&Pulawska);
+//    Ross.sprawdz_Towar("Chleb");
+//
+//    Pulawska.sprzedaj_Towar("Chleb", 2);
+//    Pulawska.wypisz_stan();
+//    tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();
+//    cout<<"Najdroższy: "<<get<0>(naj)<<endl;
+//    tuple<string, float, unsigned int> najt = Pulawska.daj_najtanszy();
+//    cout<<"Najtańszy: "<<get<0>(najt)<<endl;
+//    cout<<get<1>(Pulawska.sprawdz_Towar("Chleb"))<<endl;
+//
+////
+//////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
+////    wygeneruj_asortyment(&Pulawska);
+////
+//////    Towar* T = Pulawska.sprawdz_Towar("Zioło");
+//////    Pulawska.sprzedaj_Towar(T);
+////    Pulawska.wypisz_stan();
 ////    Niepodleglosci.wypisz_stan();
 //
 //    Pulawska.sprawdz_Towar("Chleb");

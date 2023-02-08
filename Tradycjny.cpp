@@ -4,7 +4,9 @@
 #include "math.h"
 #include "Tradycjny.h"
 # include "Sklep.h"
+#include "Miasto.h"
 #include <tuple>
+
 
 float Tradycjny::odleglosc(float x_sklepu, float y_sklepu) {
     return sqrt(pow((x-x_sklepu), 2) + pow((y-y_sklepu), 2));
@@ -36,6 +38,10 @@ Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
     } else return nullptr;
 
 }
+
+//bool Tradycjny::kup() {
+//    if ()
+//}
 //Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
 //    return nullptr;
 //}

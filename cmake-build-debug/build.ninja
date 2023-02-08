@@ -133,6 +133,12 @@ build CMakeFiles/Zaliczeniowy.dir/J_Handlowa.cpp.obj: CXX_COMPILER__Zaliczeniowy
   OBJECT_DIR = CMakeFiles\Zaliczeniowy.dir
   OBJECT_FILE_DIR = CMakeFiles\Zaliczeniowy.dir
 
+build CMakeFiles/Zaliczeniowy.dir/Symulacja.cpp.obj: CXX_COMPILER__Zaliczeniowy_Debug C$:/Users/michal/CLionProjects/Zaliczeniowy/Symulacja.cpp || cmake_object_order_depends_target_Zaliczeniowy
+  DEP_FILE = CMakeFiles\Zaliczeniowy.dir\Symulacja.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\Zaliczeniowy.dir
+  OBJECT_FILE_DIR = CMakeFiles\Zaliczeniowy.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Zaliczeniowy
@@ -141,7 +147,7 @@ build CMakeFiles/Zaliczeniowy.dir/J_Handlowa.cpp.obj: CXX_COMPILER__Zaliczeniowy
 #############################################
 # Link the executable Zaliczeniowy.exe
 
-build Zaliczeniowy.exe: CXX_EXECUTABLE_LINKER__Zaliczeniowy_Debug CMakeFiles/Zaliczeniowy.dir/main.cpp.obj CMakeFiles/Zaliczeniowy.dir/Miasto.cpp.obj CMakeFiles/Zaliczeniowy.dir/Towar.cpp.obj CMakeFiles/Zaliczeniowy.dir/Sklep.cpp.obj CMakeFiles/Zaliczeniowy.dir/Siec.cpp.obj CMakeFiles/Zaliczeniowy.dir/Mieszkaniec.cpp.obj CMakeFiles/Zaliczeniowy.dir/Wierny.cpp.obj CMakeFiles/Zaliczeniowy.dir/Minimalista.cpp.obj CMakeFiles/Zaliczeniowy.dir/Maksymalista.cpp.obj CMakeFiles/Zaliczeniowy.dir/Losowy.cpp.obj CMakeFiles/Zaliczeniowy.dir/Poszukiwacz.cpp.obj CMakeFiles/Zaliczeniowy.dir/Tradycjny.cpp.obj CMakeFiles/Zaliczeniowy.dir/Oszczedny.cpp.obj CMakeFiles/Zaliczeniowy.dir/J_Handlowa.cpp.obj
+build Zaliczeniowy.exe: CXX_EXECUTABLE_LINKER__Zaliczeniowy_Debug CMakeFiles/Zaliczeniowy.dir/main.cpp.obj CMakeFiles/Zaliczeniowy.dir/Miasto.cpp.obj CMakeFiles/Zaliczeniowy.dir/Towar.cpp.obj CMakeFiles/Zaliczeniowy.dir/Sklep.cpp.obj CMakeFiles/Zaliczeniowy.dir/Siec.cpp.obj CMakeFiles/Zaliczeniowy.dir/Mieszkaniec.cpp.obj CMakeFiles/Zaliczeniowy.dir/Wierny.cpp.obj CMakeFiles/Zaliczeniowy.dir/Minimalista.cpp.obj CMakeFiles/Zaliczeniowy.dir/Maksymalista.cpp.obj CMakeFiles/Zaliczeniowy.dir/Losowy.cpp.obj CMakeFiles/Zaliczeniowy.dir/Poszukiwacz.cpp.obj CMakeFiles/Zaliczeniowy.dir/Tradycjny.cpp.obj CMakeFiles/Zaliczeniowy.dir/Oszczedny.cpp.obj CMakeFiles/Zaliczeniowy.dir/J_Handlowa.cpp.obj CMakeFiles/Zaliczeniowy.dir/Symulacja.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Zaliczeniowy.dir

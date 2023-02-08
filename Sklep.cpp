@@ -147,7 +147,8 @@ tuple<string, float, unsigned int> Sklep::daj_losowy() {
 
 
 bool Sklep::ustaw_Siec(Siec *S) {
-    this->siec = S;
+    siec = S;
+    cout<<"Sklep "<<x<<" "<<y<<" zmienił Sieć"<<endl;
     return true;
 }
 
