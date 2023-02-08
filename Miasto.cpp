@@ -26,3 +26,19 @@ bool Miasto::dodaj_J_Handlowa(J_Handlowa *JH) {
     lista_handlowych.push_back(JH); //dodanie nowego towaru
     return true;
 }
+
+void Miasto::wypisz_stan() {
+    cout<<"W mieście znajduje się: "<<endl;
+    cout<<lista_mieszkancow.size()<<" mieszkańcow"<<endl;
+    int sk = 0;
+    int si = 0;
+    for (J_Handlowa* JH:lista_handlowych){
+        if(JH->czy_Siec()){
+            si+=1;
+        }else si+=1;
+    }
+    cout<<si<<" Sieci"<<endl;
+    cout<<sk<<" samodzielnych Sklepów"<<endl;
+
+
+}

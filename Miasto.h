@@ -22,6 +22,7 @@ public:
     //gettery
     vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
     vector<J_Handlowa*> daj_handlowe() const {return lista_handlowych;}
+    void wypisz_stan();
 
     //Konstruktor
     Miasto() = default; //zakładamy jedno miasto

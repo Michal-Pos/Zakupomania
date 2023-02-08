@@ -7,3 +7,4 @@
 //void Poszukiwacz::kup_Towar(string nazwa) {
 //    Mieszkaniec::kup_Towar(nazwa);
 //}
+

@@ -23,3 +23,7 @@ bool Losowy::kup() {
     }else cout<<"Sklep znajduje się w Sieci, nie mozna w nim kupic towaru"<<endl;
     return false;
 }
+
+void Losowy::wypisz_stan() {
+    cout<<"Losowy "<<x<<" "<<y<<" "<<budzet<<endl;
+}

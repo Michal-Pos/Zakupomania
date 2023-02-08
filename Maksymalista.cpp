@@ -20,3 +20,7 @@ bool Maksymalista::kup() {
     return false;
 
 }
+
+void Maksymalista::wypisz_stan() {
+    cout<<"Maksymalista "<<x<<" "<<y<<" "<<budzet<<endl;
+}

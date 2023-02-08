@@ -12,17 +12,7 @@
 using namespace std;
 
 
-Miasto Warszawa();
-//   B  |    A
-//---------------
-//   C  |    D
-Sklep Agrykola(17, 18);
-Sklep Banacha(-19, 20);
-Sklep Chmielna(-17, -18);
-Sklep Dolna(4,-3);
 
-Siec Pierwsza_Siec(23);
-Siec Druga_Siec(8);
 
 void print(string txt){
     cout<<txt <<endl;
@@ -103,6 +93,17 @@ Sklep* wygeneruj_asortyment(Sklep* S){
 
 
 int main() {
+    Miasto Warszawa;
+//   B  |    A
+//---------------
+//   C  |    D
+    Sklep Agrykola(17, 18);
+    Sklep Banacha(-19, 20);
+    Sklep Chmielna(-17, -18);
+    Sklep Dolna(4,-3);
+
+    Siec Pierwsza_Siec(23);
+    Siec Druga_Siec(8);
     wygeneruj_asortyment(&Agrykola);
 //    wygeneruj_asortyment(&Agrykola);
     wygeneruj_asortyment(&Banacha);
@@ -113,6 +114,8 @@ int main() {
 
     dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
     dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
+    Banacha.wypisz_stan();
+    Pierwsza_Siec.wypisz_stan();
 
 
 

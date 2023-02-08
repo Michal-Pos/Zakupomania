@@ -13,3 +13,7 @@ Sklep *Oszczedny::znajdz_sklep(Miasto *M) {
             Sklep* Sk = reinterpret_cast<Sklep *>(JH);
     }
 }
+
+void Oszczedny::wypisz_stan() {
+    cout<<"Oszczędny "<<x<<" "<<y<<" "<<budzet<<endl;
+}

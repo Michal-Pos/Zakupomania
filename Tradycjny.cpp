@@ -39,6 +39,11 @@ Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
 
 }
 
+void Tradycjny::wypisz_stan() {
+    cout<<"Tradycyjny"<<x<<" "<<y<<" "<<budzet<<endl;
+
+}
+
 //bool Tradycjny::kup() {
 //    if ()
 //}

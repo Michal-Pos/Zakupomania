@@ -12,6 +12,7 @@ private:
     Sklep* znajdz_sklep(Miasto *M);
 public:
     bool kup();
+    void wypisz_stan();
 
     Oszczedny(float _x, float _y, double _budzet, string _szukany_T): Poszukiwacz(_budzet, _x, _y, _szukany_T){}
 

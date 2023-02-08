@@ -14,6 +14,7 @@ private:
     unsigned int proby = 3;
 public:
     bool kup();
+    void wypisz_stan();
     Losowy(Sklep* S, float _x, float _y, double _budzet): Wierny(S,_budzet , _x, _y){}
 
     Losowy(const Losowy&) = default;

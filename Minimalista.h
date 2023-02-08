@@ -9,6 +9,7 @@
 
 class Minimalista: public Wierny {public:
     bool kup();
+    void wypisz_stan();
     Minimalista(Sklep* Sk, float _budzet, float _x, float _y): Wierny(Sk,_budzet, _x, _y){};
 
     //techniczne

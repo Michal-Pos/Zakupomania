@@ -22,3 +22,7 @@ bool Minimalista::kup() {
     return false;
 
 }
+
+void Minimalista::wypisz_stan() {
+    cout<<"Minimalista "<<x<<" "<<y<<" "<<budzet<<endl;
+}
