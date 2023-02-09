@@ -8,7 +8,7 @@
 
 class Oszczedny: public Poszukiwacz {
 private:
-    Sklep* znajdz_sklep();
+    Sklep* znajdz_najtan();
 public:
     bool kup();
     void wypisz_stan();

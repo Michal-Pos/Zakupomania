@@ -22,11 +22,9 @@ Sklep *Tradycjny::znajdz_najbliz() {
             sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
             if (get<2>(sprawdzany_Towar)>0){//czy towar dostępny w sklepie
                 odleg = nowa_odleg;
-
                 najblizszy_Sklep = Sk;
             }
             }
-
         }
 
     if (odleg!=INFINITY){
@@ -57,10 +55,5 @@ bool Tradycjny::kup() {
     return false;
 }
 
-//bool Tradycjny::kup() {
-//    if ()
-//}
-//Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
-//    return nullptr;
-//}
+
 

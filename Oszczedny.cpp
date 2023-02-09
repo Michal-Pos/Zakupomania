@@ -21,7 +21,9 @@ void Oszczedny::wypisz_stan() {
     cout<<"Oszczędny "<<x<<" "<<y<<" "<<budzet<<endl;
 }
 
-Sklep *Oszczedny::znajdz_sklep() {
+
+
+Sklep *Oszczedny::znajdz_najtan() {
     float cena = INFINITY;
     float nowa_cena;
     tuple<string , float, unsigned int> sprawdzany_Towar;
@@ -37,4 +39,21 @@ Sklep *Oszczedny::znajdz_sklep() {
     if (cena!=INFINITY){
         return najtanszy_Sklep;
     } else return nullptr;
+}
+
+bool Oszczedny::kup() {
+    cout<<"Rozpoczęto kupowanie dla klienta Oszczednego "<<x<<" "<<y<<endl;
+    Sklep* S = znajdz_najtan();
+    if (S){
+        tuple<string, float, unsigned int> towar = S->sprawdz_Towar(szukany_T);
+        float cena = get<1>(towar);
+        unsigned int ilosc = get<2>(towar);
+        if (ilosc>0 && cena< budzet){//jeśli Mieszkańca stać na dany przedmiot
+            budzet-= cena;
+            S->sprzedaj_Towar(szukany_T,1);
+            cout<<"Udało się "<<szukany_T <<" w cenie "<<cena<<endl;
+            return true;
+        };
+    } else cout<<"W mieście nie ma"<<endl;
+    return false;
 }
