@@ -28,15 +28,15 @@ tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
     return wynik;
 }
 float Siec::uwzglednij_marze(float stara_cena) {return stara_cena*(ceil(1 + marza)/100);}
+
 tuple<string , float, unsigned int> Siec::sprawdz_Towar(Sklep *S, string nazwa, unsigned int ilosc) {
     if (czy_Sklep_w_Sieci(S)){
-        auto towar = S->sprawdz_Towar(nazwa);
-        get<1>(towar) = uwzglednij_marze(get<1>(towar));
-        return towar;
+        return S->sprawdz_Towar(nazwa);
     }
     tuple<string , float, int> wynik = make_tuple("", 0, 0);
     return wynik;
 }
+
 
 void Siec::wypisz_stan() {
     cout<<"........................"<<endl;

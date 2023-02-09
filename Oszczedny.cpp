@@ -45,7 +45,7 @@ bool Oszczedny::kup() {
     cout<<"Rozpoczęto kupowanie dla klienta Oszczednego "<<x<<" "<<y<<endl;
     Sklep* S = znajdz_najtan();
     if (S){
-        tuple<string, float, unsigned int> towar = S->sprawdz_Towar(szukany_T);
+        auto towar = S->sprawdz_Towar(szukany_T);
         float cena = get<1>(towar);
         unsigned int ilosc = get<2>(towar);
         if (ilosc>0 && cena< budzet){//jeśli Mieszkańca stać na dany przedmiot

@@ -46,13 +46,19 @@ tuple<string , float, unsigned int> Sklep::sprawdz_Towar(string nazwa){
     for (Towar* t: towary){
         if (t->daj_nazwe()==nazwa){
             cout<<"W sklepie znajduje się "<< t->daj_nazwe()<<" w ilości "<<t->daj_ilosc()<<endl;
-            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), t->daj_cene(), t->daj_ilosc());
+            float cena = t->daj_cene();
+            if (siec){// sklep sprawdzając towar uwzględnia już marżę
+                cena = siec->uwzglednij_marze(cena);
+            }
+            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), cena, t->daj_ilosc());
             return wynik;
         };
     }
     cout<<"W sklepie nie ma "<<nazwa<<endl;
     tuple<string , float, int> wynik = make_tuple("", 0, 0);
-    return wynik;
+    if (siec){
+        return wynik;
+    }
 }
 
 
