@@ -5,6 +5,7 @@
 #include "Losowy.h"
 
 bool Losowy::kup() {
+    cout<<"Rozpoczęto kupowanie dla klienta Losowego "<<x<<" "<<y<<endl;
     if (!ulubiony->czy_w_Sieci()){//sprawdzanie czy Sklep znajduje się w Sieci (do przepisania)
         for (int i =0; i<proby; i++){
             tuple<string, float, unsigned int> losowy = ulubiony->daj_najdrozszy();

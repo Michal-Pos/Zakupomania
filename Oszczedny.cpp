@@ -54,6 +54,6 @@ bool Oszczedny::kup() {
             cout<<"Udało się "<<szukany_T <<" w cenie "<<cena<<endl;
             return true;
         };
-    } else cout<<"W mieście nie ma"<<endl;
+    } else cout<<"W mieście nie ma szukanego Towaru"<<endl;
     return false;
 }

@@ -5,6 +5,7 @@
 #include "Maksymalista.h"
 
 bool Maksymalista::kup() {
+    cout<<"Rozpoczęto kupowanie dla klienta Maksymalista "<<x<<" "<<y<<endl;
     if (!ulubiony->czy_w_Sieci()){
         tuple<string, float, unsigned int> najdro = ulubiony->daj_najdrozszy();
         string nazwa = get<0>(najdro);

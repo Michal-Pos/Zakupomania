@@ -5,6 +5,7 @@
 #include "Minimalista.h"
 
 bool Minimalista::kup() {
+    cout<<"Rozpoczęto kupowanie dla klienta Minimalista "<<x<<" "<<y<<endl;
     if(!ulubiony->czy_w_Sieci()){
         tuple<string, float, unsigned int> najtan = ulubiony->daj_najtanszy();
         string nazwa = get<0>(najtan);
