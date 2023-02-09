@@ -37,6 +37,13 @@ tuple<string , float, unsigned int> Siec::sprawdz_Towar(Sklep *S, string nazwa, 
     return wynik;
 }
 
+bool Siec::sprzedaj_Towar(Sklep *S, string nazwa, unsigned int ilosc) {
+    if (czy_Sklep_w_Sieci(S)){
+        return S->sprzedaj_Towar(nazwa, ilosc);
+    }
+    return false;
+}
+
 
 void Siec::wypisz_stan() {
     cout<<"........................"<<endl;
