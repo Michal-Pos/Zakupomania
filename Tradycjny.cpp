@@ -44,9 +44,15 @@ bool Tradycjny::kup() {
     cout<<"Rozpoczęto kupowanie dla klienta Tradycyjnego "<<x<<" "<<y<<endl;
     Sklep* S = znajdz_najbliz();
     if (S){
-        if (!S->czy_w_Sieci()){
-
-        }
+        tuple<string, float, unsigned int> towar = S->sprawdz_Towar(szukany_T);
+        float cena = get<1>(towar);
+        unsigned int ilosc = get<2>(towar);
+        if (ilosc>0 && cena< budzet){//jeśli Mieszkańca stać na dany przedmiot
+            budzet-= cena;
+            S->sprzedaj_Towar(szukany_T,1);
+            cout<<"Udało się "<<szukany_T <<" w cenie "<<cena<<endl;
+            return true;
+        };
     } else cout<<"W  najbliższej odległości nie ma żadnych sklepów z szukanym towarem"<<endl;
     return false;
 }
