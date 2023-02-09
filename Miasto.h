@@ -16,6 +16,11 @@ private:
     vector<Mieszkaniec*> lista_mieszkancow = {}; //Mieszkańcy
     vector<Sklep*> lista_sklepow = {}; // Sklepy
 public:
+    Miasto& operator+=(Mieszkaniec* m);
+    Miasto& operator-=(Mieszkaniec* m);
+
+    Miasto& operator+=(Sklep* sk);
+
     bool dodaj_sklep(Sklep* Sk);
     bool dodaj_Mieszkanca(Mieszkaniec* M);
     //gettery

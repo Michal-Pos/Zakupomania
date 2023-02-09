@@ -4,11 +4,7 @@
 
 #include "Siec.h"
 #include "cmath"
-#include <utility>
 
-//Siec::Siec(float _marza) {
-//
-//}
 
 
 tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
@@ -24,7 +20,7 @@ tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
     } else cout<<"W Sieci nie ma sklepów, nie można sprawdzić towarów"<<endl;
 
 
-    tuple<string , float, int> wynik = make_tuple("", 0, 0);
+    tuple<string , float, unsigned int> wynik = make_tuple("", 0, 0);
     return wynik;
 }
 float Siec::uwzglednij_marze(float stara_cena) {return stara_cena*(ceil(1 + marza)/100);}
@@ -65,6 +61,8 @@ bool Siec::dodaj_Sklep(Sklep *S) {
     cout<<"Do Sieci dodano Sklep, teraz się w niej znajduje: "<<lista_sklepow.size()<<" sklepów"<<endl;
     return true;
 }
+
+
 
 bool Siec::usun_Sklep(Sklep *S) {
     int i = 0;

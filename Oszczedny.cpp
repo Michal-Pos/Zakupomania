@@ -58,8 +58,8 @@ bool Oszczedny::kup() {
                 cout<<"Udało się "<<szukany_T <<" w cenie "<<cena<<endl;
                 return true;
             }else{
-                cout<<"Nastąpiłnieznany błąd"<<endl;
-                return false
+                cout<<"Nastąpił nieznany błąd"<<endl;
+                return false;
             }
 
 
