@@ -17,6 +17,7 @@ private:
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
     bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
     bool usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
+    float uwzglednij_marze(float stara_cena);
 
 public:
     //gettery
@@ -25,7 +26,10 @@ public:
     friend bool przejmij_Siec(Siec* S_przejmujaca,Siec* S_przejmowana);//przejmuje Sieć wraz ze sklepami
     bool czy_Sklep_w_Sieci(Sklep* S);
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
-    bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
+
+
+    tuple<string , float, unsigned int> sprawdz_Towar(Sklep *S, string nazwa, unsigned int ilosc);
+    bool sprzedaj_Towar(Sklep* S, string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
     bool czy_Siec(){return true;}
     void wypisz_stan();
 

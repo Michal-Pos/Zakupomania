@@ -13,9 +13,8 @@ using namespace std;
 
 class Miasto {
 private:
-    vector<Mieszkaniec*> lista_mieszkancow = {};
-// Mieszkańcy będa mieli dostep, z kolei zmiana struktur w sieci też musi byc katalogowana
-    vector<Sklep*> lista_sklepow = {}; // Sklepy i sieci
+    vector<Mieszkaniec*> lista_mieszkancow = {}; //Mieszkańcy
+    vector<Sklep*> lista_sklepow = {}; // Sklepy
 public:
     bool dodaj_sklep(Sklep* Sk);
     bool dodaj_Mieszkanca(Mieszkaniec* M);

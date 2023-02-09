@@ -3,17 +3,14 @@
 //
 
 #include "Siec.h"
+#include "cmath"
+#include <utility>
 
 //Siec::Siec(float _marza) {
 //
 //}
 
-bool Sklep::czy_w_Sieci() {
-    if (siec){
-        return true;
-    }
-    return false;
-}
+
 tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
     if (!lista_sklepow.empty()){
         for (Sklep* S: lista_sklepow){
@@ -27,6 +24,16 @@ tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
     } else cout<<"W Sieci nie ma sklepów, nie można sprawdzić towarów"<<endl;
 
 
+    tuple<string , float, int> wynik = make_tuple("", 0, 0);
+    return wynik;
+}
+float Siec::uwzglednij_marze(float stara_cena) {return stara_cena*(ceil(1 + marza)/100);}
+tuple<string , float, unsigned int> Siec::sprawdz_Towar(Sklep *S, string nazwa, unsigned int ilosc) {
+    if (czy_Sklep_w_Sieci(S)){
+        auto towar = S->sprawdz_Towar(nazwa);
+        get<1>(towar) = uwzglednij_marze(get<1>(towar));
+        return towar;
+    }
     tuple<string , float, int> wynik = make_tuple("", 0, 0);
     return wynik;
 }

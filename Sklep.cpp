@@ -38,12 +38,7 @@ void Sklep::wypisz_stan() {
     }
 
 }
-float Sklep::uwzglednij_marze(float stara_cena) {
-    if (siec!= nullptr){
-        return stara_cena*(ceil(1 + siec->daj_marza())/100);
-    }
-    return stara_cena;
-}
+
 
 
 tuple<string , float, unsigned int> Sklep::sprawdz_Towar(string nazwa){
@@ -51,7 +46,7 @@ tuple<string , float, unsigned int> Sklep::sprawdz_Towar(string nazwa){
     for (Towar* t: towary){
         if (t->daj_nazwe()==nazwa){
             cout<<"W sklepie znajduje się "<< t->daj_nazwe()<<" w ilości "<<t->daj_ilosc()<<endl;
-            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), uwzglednij_marze(t->daj_cene()), t->daj_ilosc());
+            tuple<string , float, int> wynik = make_tuple(t->daj_nazwe(), t->daj_cene(), t->daj_ilosc());
             return wynik;
         };
     }
@@ -72,17 +67,22 @@ bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
     }
     return false;
 }
-
+bool Sklep::czy_w_Sieci() {
+    if (siec){
+        return true;
+    }
+    return false;
+}
 //skończyłeś tutaj
 tuple<string, float, unsigned int> Sklep::daj_najdrozszy(){
     if (!towary.empty()){
 
         Towar* najdr_Towar = towary.front();
-        float najw_cena = uwzglednij_marze(najdr_Towar->daj_cene());
+        float najw_cena = najdr_Towar->daj_cene();
 
         for (Towar* T: towary){
             if (T->daj_cene()>najw_cena && T->daj_ilosc()>0){
-                najw_cena = uwzglednij_marze(T->daj_cene());
+                najw_cena = T->daj_cene();
                 najdr_Towar = T;
             }
         }
