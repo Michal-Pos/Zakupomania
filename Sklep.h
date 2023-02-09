@@ -43,6 +43,8 @@ public:
     //gettery
     float daj_x() const{return x;}
     float daj_y() const {return y;}
+    Siec* daj_siec() const {return siec;}
+
     bool czy_w_Sieci();
     bool czy_Siec(){return true;}
 

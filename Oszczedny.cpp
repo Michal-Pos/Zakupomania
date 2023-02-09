@@ -50,9 +50,19 @@ bool Oszczedny::kup() {
         unsigned int ilosc = get<2>(towar);
         if (ilosc>0 && cena< budzet){//jeśli Mieszkańca stać na dany przedmiot
             budzet-= cena;
-            S->sprzedaj_Towar(szukany_T,1);
-            cout<<"Udało się "<<szukany_T <<" w cenie "<<cena<<endl;
-            return true;
+            bool wynik;
+            if (S->czy_w_Sieci()){
+                wynik = S->daj_siec()->sprzedaj_Towar(S, szukany_T, 1);
+            }else wynik = S->sprzedaj_Towar(szukany_T,1);
+            if (wynik){
+                cout<<"Udało się "<<szukany_T <<" w cenie "<<cena<<endl;
+                return true;
+            }else{
+                cout<<"Nastąpiłnieznany błąd"<<endl;
+                return false
+            }
+
+
         };
     } else cout<<"W mieście nie ma szukanego Towaru"<<endl;
     return false;
