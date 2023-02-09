@@ -12,7 +12,6 @@ float Tradycjny::odleglosc(float x_sklepu, float y_sklepu) {
     return sqrt(pow((x-x_sklepu), 2) + pow((y-y_sklepu), 2));
 }
 Sklep *Tradycjny::znajdz_najbliz() {
-
     float odleg = INFINITY;
     float nowa_odleg;
     tuple<string , float, unsigned int> sprawdzany_Towar;
@@ -42,6 +41,13 @@ void Tradycjny::wypisz_stan() {
 }
 
 bool Tradycjny::kup() {
+    cout<<"Rozpoczęto kupowanie dla klienta Tradycyjnego "<<x<<" "<<y<<endl;
+    Sklep* S = znajdz_najbliz();
+    if (S){
+        if (!S->czy_w_Sieci()){
+
+        }
+    } else cout<<"W  najbliższej odległości nie ma żadnych sklepów z szukanym towarem"<<endl;
     return false;
 }
 

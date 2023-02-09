@@ -5,6 +5,8 @@
 #ifndef ZALICZENIOWY_POSZUKIWACZ_H
 #define ZALICZENIOWY_POSZUKIWACZ_H
 #include "Mieszkaniec.h"
+#include "Miasto.h"
+
 
 class Poszukiwacz: public Mieszkaniec{
 protected:

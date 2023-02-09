@@ -5,7 +5,6 @@
 #ifndef ZALICZENIOWY_OSZCZEDNY_H
 #define ZALICZENIOWY_OSZCZEDNY_H
 #include "Poszukiwacz.h"
-#include "Miasto.h"
 
 class Oszczedny: public Poszukiwacz {
 private:

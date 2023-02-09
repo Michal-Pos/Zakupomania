@@ -10,9 +10,9 @@
 class Tradycjny: public Poszukiwacz{
 private:
     float odleglosc(float x_sklepu, float y_sklepu);
+    Sklep* znajdz_najbliz();
 
 public:
-    Sklep* znajdz_najbliz();
     bool kup();
     void wypisz_stan();
 

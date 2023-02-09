@@ -122,7 +122,7 @@ int main() {
     Warszawa->dodaj_sklep(&Banacha);
     Warszawa->dodaj_sklep(&Dolna);
     Tradycjny Mirek(0,0,30,"Chleb");
-    Mirek.znajdz_najbliz()->wypisz_stan();
+//    Mirek.znajdz_najbliz()->wypisz_stan();
 
 
     Warszawa->wypisz_stan();

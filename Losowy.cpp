@@ -5,7 +5,7 @@
 #include "Losowy.h"
 
 bool Losowy::kup() {
-    if (!ulubiony->czy_w_Sieci()){
+    if (!ulubiony->czy_w_Sieci()){//sprawdzanie czy Sklep znajduje się w Sieci (do przepisania)
         for (int i =0; i<proby; i++){
             tuple<string, float, unsigned int> losowy = ulubiony->daj_najdrozszy();
             string nazwa = get<0>(losowy);
