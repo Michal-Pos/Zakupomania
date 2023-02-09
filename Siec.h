@@ -13,7 +13,7 @@ using namespace std;
 
 class Siec: public J_Handlowa{
 private:
-    vector<Sklep*> lista_sklepow;
+    vector<Sklep*> lista_sklepow = {};
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
     bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
     bool usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
@@ -23,6 +23,9 @@ public:
     double daj_marza() const {return marza;}
     // metody
     friend bool przejmij_Siec(Siec* S_przejmujaca,Siec* S_przejmowana);//przejmuje Sieć wraz ze sklepami
+    Siec& operator+=(Sklep* sk);
+
+
     bool czy_Sklep_w_Sieci(Sklep* S);
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     float uwzglednij_marze(float stara_cena);

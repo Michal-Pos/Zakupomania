@@ -52,6 +52,15 @@ void Siec::wypisz_stan() {
 
 }
 
+Siec &Siec::operator+=(Sklep *sk) {
+    if (!czy_Sklep_w_Sieci(sk)){
+        sk->ustaw_siec(this);
+        lista_sklepow.push_back(sk);
+//
+    }
+    return *this;
+}
+
 bool Siec::dodaj_Sklep(Sklep *S) {
     if (czy_Sklep_w_Sieci(S)){
         cout<<"Sklep jest już w sieci"<<endl;

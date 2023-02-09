@@ -7,7 +7,17 @@
 #include <iostream>
 #include <cmath>
 
-
+Sklep& Sklep::operator+=(Towar* t) {
+    towary.push_back(t);
+    for (Towar* t: towary){
+        if (t->daj_nazwe()==t->daj_nazwe()){
+            t->ustaw_ilosc(t->daj_ilosc()+t->daj_ilosc());
+            return *this; //zwiększenie ilości towaru
+        };
+    }
+    towary.push_back(t); //dodanie nowego towaru
+    return *this;
+}
 
 
 void Sklep::dodaj_Towar(Towar* T) {

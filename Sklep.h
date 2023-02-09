@@ -21,7 +21,7 @@ private:
     // settery
     bool ustaw_Siec(Siec* S);
 public:
-
+    Sklep& operator+=(Towar* t);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
     float uwzglednij_marze(float stara_cena);
 
@@ -47,6 +47,8 @@ public:
 
     bool czy_w_Sieci();
     bool czy_Siec(){return true;}
+
+    void ustaw_siec(Siec* s){siec = s;}
 
 //    float daj_marze();
 
