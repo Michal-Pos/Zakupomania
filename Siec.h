@@ -24,6 +24,7 @@ public:
     // metody
     friend bool przejmij_Siec(Siec* S_przejmujaca,Siec* S_przejmowana);//przejmuje Sieć wraz ze sklepami
     Siec& operator+=(Sklep* sk);
+    Siec& operator-=(Sklep* sk);
 
 
     bool czy_Sklep_w_Sieci(Sklep* S);

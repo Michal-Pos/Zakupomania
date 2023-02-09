@@ -55,10 +55,7 @@ bool przejmij_Siec(Siec *S_przejmujaca, Siec *S_przejmowana) {
 
 
 
-void Mieszkaniec_kupuje(Mieszkaniec* M, string nazwa, Sklep* S){
-    S->sprawdz_Towar(nazwa);
 
-}
 
 
 

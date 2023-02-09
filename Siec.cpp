@@ -61,6 +61,16 @@ Siec &Siec::operator+=(Sklep *sk) {
     return *this;
 }
 
+Siec &Siec::operator-=(Sklep *sk) {
+    auto it = find(lista_sklepow.begin(), lista_sklepow.end(), sk);
+    if (it!=lista_sklepow.end()){
+        swap(*it, lista_sklepow.back());
+        lista_sklepow.pop_back();
+        sk->ustaw_siec(nullptr);
+    }
+    return *this;
+}
+
 bool Siec::dodaj_Sklep(Sklep *S) {
     if (czy_Sklep_w_Sieci(S)){
         cout<<"Sklep jest już w sieci"<<endl;
