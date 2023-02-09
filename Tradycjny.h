@@ -12,7 +12,7 @@ private:
     float odleglosc(float x_sklepu, float y_sklepu);
 
 public:
-    Sklep* znajdz_najbliz(Miasto* M);
+    Sklep* znajdz_najbliz();
     bool kup();
     void wypisz_stan();
 

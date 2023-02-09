@@ -31,6 +31,10 @@ public:
     Miasto& operator=(const Miasto&) = delete; // nie kopiujemy miast
     Miasto(Miasto&&) = delete; // miasto jest tylko jedno
     Miasto& operator=(Miasto&&) = default; // miasto jest tylko jedno
+    static Miasto* daj_miasto() {
+        static Miasto m;
+        return &m;
+    }
 };
 
 

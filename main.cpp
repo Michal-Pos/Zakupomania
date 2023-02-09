@@ -8,6 +8,7 @@
 #include <random>
 #include "Tradycjny.h"
 #include<cstdlib>
+#include "Miasto.h"
 
 
 using namespace std;
@@ -94,10 +95,10 @@ Sklep* wygeneruj_asortyment(Sklep* S){
 
 
 int main() {
-    Miasto Warszawa;
 //   B  |    A
 //---------------
 //   C  |    D
+    Miasto* Warszawa = Miasto::daj_miasto();
     Sklep Agrykola(17, 18);
     Sklep Banacha(-19, 20);
     Sklep Chmielna(-17, -18);
@@ -105,69 +106,31 @@ int main() {
 
     Siec Pierwsza_Siec(23);
     Siec Druga_Siec(8);
+
     wygeneruj_asortyment(&Agrykola);
 //    wygeneruj_asortyment(&Agrykola);
     wygeneruj_asortyment(&Banacha);
     wygeneruj_asortyment(&Chmielna);
     wygeneruj_asortyment(&Dolna);
+
+
     dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
     dodaj_Siec_Sklep(&Pierwsza_Siec, &Banacha);
 
     dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
     dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
-    Warszawa.dodaj_sklep(&Banacha);
-    Warszawa.dodaj_sklep(&Dolna);
+    Warszawa->dodaj_sklep(&Banacha);
+    Warszawa->dodaj_sklep(&Dolna);
     Tradycjny Mirek(0,0,30,"Chleb");
-    Mirek.znajdz_najbliz(&Warszawa)->wypisz_stan();
+    Mirek.znajdz_najbliz()->wypisz_stan();
 
 
-    Warszawa.wypisz_stan();
+    Warszawa->wypisz_stan();
 //    Banacha.wypisz_stan();
 //    Pierwsza_Siec.wypisz_stan();
 
 
 
-
-//    Siec Ross(17.5);
-//    Sklep Pulawska(17, 18);
-//
-//    dodaj_Siec_Sklep(&Ross, &Pulawska);
-////    usun_Siec_Sklep(&Ross, &Pulawska);
-////    dodaj_Siec_Sklep(&Ross, &Pulawska);
-//
-//
-////    Sklep Niepodleglosci(20.5, -31);
-////    Pulawska.dodaj_Towar(&T1);
-////    Pulawska.dodaj_Towar(&T2);
-//    cout<<"Pulawska"<<endl;
-//    Pulawska.wypisz_stan();
-////    cout<<"Niepodległosci"<<endl;
-////    Niepodleglosci.wypisz_stan();
-//
-//    cout<<"Dodawanie asortymentu do Pulawskiej"<<endl;
-//    wygeneruj_asortyment(&Pulawska);
-//    Ross.sprawdz_Towar("Chleb");
-//
-//    Pulawska.sprzedaj_Towar("Chleb", 2);
-//    Pulawska.wypisz_stan();
-//    tuple<string, float, unsigned int> naj = Pulawska.daj_najdrozszy();
-//    cout<<"Najdroższy: "<<get<0>(naj)<<endl;
-//    tuple<string, float, unsigned int> najt = Pulawska.daj_najtanszy();
-//    cout<<"Najtańszy: "<<get<0>(najt)<<endl;
-//    cout<<get<1>(Pulawska.sprawdz_Towar("Chleb"))<<endl;
-//
-////
-//////    cout<<"Dodawanie asortymentu do Niepodleglosci"<<endl;
-////    wygeneruj_asortyment(&Pulawska);
-////
-//////    Towar* T = Pulawska.sprawdz_Towar("Zioło");
-//////    Pulawska.sprzedaj_Towar(T);
-////    Pulawska.wypisz_stan();
-////    Niepodleglosci.wypisz_stan();
-//
-//    Pulawska.sprawdz_Towar("Chleb");
-
-//    Niepodleglosci.sprawdz_Towar("Mleko");
 
 
 

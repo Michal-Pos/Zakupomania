@@ -6,6 +6,7 @@
 #define ZALICZENIOWY_TOWAR_H
 #include <string>
 #include <iostream>
+//#include "Miasto.h"
 using namespace std;
 
 class Towar {

@@ -1,7 +1,7 @@
 //
 // Created by michal on 02.01.2023.
 //
-#include "math.h"
+#include "cmath"
 #include "Tradycjny.h"
 # include "Sklep.h"
 #include "Miasto.h"
@@ -11,12 +11,13 @@
 float Tradycjny::odleglosc(float x_sklepu, float y_sklepu) {
     return sqrt(pow((x-x_sklepu), 2) + pow((y-y_sklepu), 2));
 }
-Sklep *Tradycjny::znajdz_najbliz(Miasto *M) {
+Sklep *Tradycjny::znajdz_najbliz() {
+
     float odleg = INFINITY;
     float nowa_odleg;
     tuple<string , float, unsigned int> sprawdzany_Towar;
     Sklep* najblizszy_Sklep = nullptr;
-    for (Sklep* Sk: M->daj_sklepy()){
+    for (Sklep* Sk: Miasto::daj_miasto()->daj_sklepy()){
         nowa_odleg = odleglosc(Sk->daj_x(), Sk->daj_y());
         if (nowa_odleg < odleg){// sprawdzamy czy odległość jest mniejsza
             sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);

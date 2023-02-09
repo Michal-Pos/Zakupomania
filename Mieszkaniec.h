@@ -6,6 +6,8 @@
 #define ZALICZENIOWY_MIESZKANIEC_H
 #include <string>
 #include "Towar.h"
+//#include "Miasto.h"
+
 
 class Mieszkaniec{
 protected:

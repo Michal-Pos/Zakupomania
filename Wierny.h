@@ -4,7 +4,6 @@
 
 #ifndef ZALICZENIOWY_WIERNY_H
 #define ZALICZENIOWY_WIERNY_H
-#include "Mieszkaniec.h"
 #include "Sklep.h"
 
 class Wierny: public Mieszkaniec{

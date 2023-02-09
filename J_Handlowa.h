@@ -5,7 +5,7 @@
 #ifndef ZALICZENIOWY_J_HANDLOWA_H
 #define ZALICZENIOWY_J_HANDLOWA_H
 #include "Towar.h"
-#include "Mieszkaniec.h"
+//#include "Mieszkaniec.h"
 #include <vector>
 #include <algorithm>
 #include <string>
