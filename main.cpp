@@ -73,12 +73,15 @@ Sklep* wygeneruj_asortyment(Sklep* S){
 
         float cena = generateRandomNumber(30);
         int ilosc = generateRandomNumber(20);
-        Towar* T = new Towar(ilosc, cena, l[i]);
-        S->dodaj_Towar(T);
+//        S+= Towar(ilosc, cena, l[i]);
+//        auto* T = new Towar(ilosc, cena, l[i]);
+        S->operator+=(new Towar(ilosc, cena, l[i]));
+//        S+= new Towar(ilosc, cena, l[i]);
+//        S->dodaj_Towar(T);
     }
-    for (Towar towar: lista_Towarow){
-        S->dodaj_Towar(&towar);
-    }
+//    for (Towar towar: lista_Towarow){
+//        S->dodaj_Towar(&towar);
+//    }
     S->wypisz_stan();
     return S;
 }
@@ -96,15 +99,18 @@ int main() {
     Sklep Banacha(-19, 20);
     Sklep Chmielna(-17, -18);
     Sklep Dolna(4,-3);
+//    Towar T = Towar(4, 7, "Chleb");
+//    Banacha+=&T;
+
 
     Siec Pierwsza_Siec(23);
     Siec Druga_Siec(8);
 
 //    wygeneruj_asortyment(&Agrykola);
 //    wygeneruj_asortyment(&Agrykola);
-//    wygeneruj_asortyment(&Banacha);
+    wygeneruj_asortyment(&Banacha);
 //    wygeneruj_asortyment(&Chmielna);
-//    wygeneruj_asortyment(&Dolna);
+    wygeneruj_asortyment(&Dolna);
 //
 //
 //    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
