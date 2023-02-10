@@ -54,9 +54,9 @@ void Siec::wypisz_stan() {
 
 Siec &Siec::operator+=(Sklep *sk) {
     if (!czy_Sklep_w_Sieci(sk)){
+        cout<<"dodajemy sklep do Sieci"<<endl;
         sk->ustaw_siec(this);
         lista_sklepow.push_back(sk);
-//
     }
     return *this;
 }
@@ -70,6 +70,17 @@ Siec &Siec::operator-=(Sklep *sk) {
     }
     return *this;
 }
+
+
+Siec &Siec::operator+=(Siec *si) {
+    for (Sklep* sk: si->lista_sklepow){
+        si->operator-=(sk);
+        sk->ustaw_siec(this);
+    }
+//    delete si;
+    return *this;
+}
+
 
 bool Siec::dodaj_Sklep(Sklep *S) {
     if (czy_Sklep_w_Sieci(S)){

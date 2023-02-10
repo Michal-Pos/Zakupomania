@@ -26,6 +26,8 @@ public:
     Siec& operator+=(Sklep* sk);
     Siec& operator-=(Sklep* sk);
 
+    Siec& operator+=(Siec* si);
+
 
     bool czy_Sklep_w_Sieci(Sklep* S);
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);

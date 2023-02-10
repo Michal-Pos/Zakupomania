@@ -19,14 +19,14 @@ private:
     Siec* siec;
     float x,y;
     // settery
-    bool ustaw_Siec(Siec* S);
+    void ustaw_Siec(Siec* S);
 public:
     Sklep& operator+=(Towar* t);
     bool sprzedaj_Towar(string nazwa, unsigned int ilosc); //zmniejsza ilosc towaru
     float uwzglednij_marze(float stara_cena);
 
 
-    bool sprzedaj_najdro_Towar();
+//    bool sprzedaj_najdro_Towar();
 
     tuple<string, float, unsigned int> sprawdz_Towar(string nazwa);
     tuple<string, float, unsigned int> daj_najdrozszy();

@@ -20,41 +20,37 @@ void print(string txt){
     cout<<txt <<endl;
 }
 
-void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
+//void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
+//
+//    if (!Si->czy_Sklep_w_Sieci(Sk)){// Jesli sklep znajduje się w Sieci
+//        if (Si->dodaj_Sklep(Sk) && Sk->ustaw_Siec(Si)) cout<<"Do Sieci  poprawnie dodano Sklep "<<Sk->daj_x()<<" "<<Sk->daj_y()<<endl;
+//        else
+//            cout<<"wystąpił błąd, nie udało się dodac sklepu do sieci "<<endl;
+//    }else
+//        cout<<"Sklep już się znajduje w Sieci"<<endl;//Sklep jest juz w Sieci, nic nie robimy
+//
+//}
+//void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
+//    if (Si->czy_Sklep_w_Sieci(Sk)) {
+//        if (Si->usun_Sklep(Sk) && Sk->ustaw_Siec(nullptr)) cout<<"Z Sieci został poprawnie usunięty Sklep"<<endl;
+//        else
+//            cout<<"wystąpił błąd, nie udało się poprawnie usunąc Sklepu z Sieci "<<endl;
+//    }
+//    else print("Sklep nie znajduje się w sieci, nie można go usunąć");
+//
+//}
 
-    if (!Si->czy_Sklep_w_Sieci(Sk)){// Jesli sklep znajduje się w Sieci
-        if (Si->dodaj_Sklep(Sk) && Sk->ustaw_Siec(Si)) cout<<"Do Sieci  poprawnie dodano Sklep "<<Sk->daj_x()<<" "<<Sk->daj_y()<<endl;
-        else
-            cout<<"wystąpił błąd, nie udało się dodac sklepu do sieci "<<endl;
-    }else
-        cout<<"Sklep już się znajduje w Sieci"<<endl;//Sklep jest juz w Sieci, nic nie robimy
-
-}
-void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
-    if (Si->czy_Sklep_w_Sieci(Sk)) {
-        if (Si->usun_Sklep(Sk) && Sk->ustaw_Siec(nullptr)) cout<<"Z Sieci został poprawnie usunięty Sklep"<<endl;
-        else
-            cout<<"wystąpił błąd, nie udało się poprawnie usunąc Sklepu z Sieci "<<endl;
-    }
-    else print("Sklep nie znajduje się w sieci, nie można go usunąć");
-
-}
-
-bool przejmij_Siec(Siec *S_przejmujaca, Siec *S_przejmowana) {
-    if (S_przejmujaca!=S_przejmowana){
-        for (Sklep* sk: S_przejmowana->lista_sklepow){
-            usun_Siec_Sklep(S_przejmowana, sk);
-            dodaj_Siec_Sklep(S_przejmujaca, sk);
-        }
-        return true;
-    }
-    print("Zła instrukcja wejścia, Siec przejmująca i przejmowana są tymi samymi sieciami");
-    return false;
-}
-
-
-
-
+//bool przejmij_Siec(Siec *S_przejmujaca, Siec *S_przejmowana) {
+//    if (S_przejmujaca!=S_przejmowana){
+//        for (Sklep* sk: S_przejmowana->lista_sklepow){
+//            usun_Siec_Sklep(S_przejmowana, sk);
+//            dodaj_Siec_Sklep(S_przejmujaca, sk);
+//        }
+//        return true;
+//    }
+//    print("Zła instrukcja wejścia, Siec przejmująca i przejmowana są tymi samymi sieciami");
+//    return false;
+//}
 
 
 
@@ -96,7 +92,7 @@ int main() {
 //---------------
 //   C  |    D
     Miasto* Warszawa = Miasto::daj_miasto();
-    Sklep Agrykola(17, 18);
+//    Sklep Agrykola(17, 18);
     Sklep Banacha(-19, 20);
     Sklep Chmielna(-17, -18);
     Sklep Dolna(4,-3);
@@ -104,25 +100,41 @@ int main() {
     Siec Pierwsza_Siec(23);
     Siec Druga_Siec(8);
 
-    wygeneruj_asortyment(&Agrykola);
 //    wygeneruj_asortyment(&Agrykola);
-    wygeneruj_asortyment(&Banacha);
-    wygeneruj_asortyment(&Chmielna);
-    wygeneruj_asortyment(&Dolna);
+//    wygeneruj_asortyment(&Agrykola);
+//    wygeneruj_asortyment(&Banacha);
+//    wygeneruj_asortyment(&Chmielna);
+//    wygeneruj_asortyment(&Dolna);
+//
+//
+//    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
+//    dodaj_Siec_Sklep(&Pierwsza_Siec, &Banacha);
+//
+//    dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
+//    dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
+    Pierwsza_Siec+=&Dolna;
+    Pierwsza_Siec.wypisz_stan();
+
+//    Pierwsza_Siec-=&Dolna;
+//    Pierwsza_Siec.wypisz_stan();
+
+    Druga_Siec+=&Banacha;
+    Druga_Siec.wypisz_stan();
+    Pierwsza_Siec+=&Druga_Siec;
+//    Druga_Siec-=&Banacha;
+//    Pierwsza_Siec.wypisz_stan();
+    Druga_Siec.wypisz_stan();
+
+//    Banacha.daj_siec()->wypisz_stan();
 
 
-    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
-    dodaj_Siec_Sklep(&Pierwsza_Siec, &Banacha);
-
-    dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
-    dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
-    Warszawa->dodaj_sklep(&Banacha);
-    Warszawa->dodaj_sklep(&Dolna);
-    Tradycjny Mirek(0,0,30,"Chleb");
+//    Warszawa->dodaj_sklep(&Banacha);
+//    Warszawa->dodaj_sklep(&Dolna);
+//    Tradycjny Mirek(0,0,30,"Chleb");
 //    Mirek.znajdz_najbliz()->wypisz_stan();
 
 
-    Warszawa->wypisz_stan();
+//    Warszawa->wypisz_stan();
 //    Banacha.wypisz_stan();
 //    Pierwsza_Siec.wypisz_stan();
 

@@ -166,11 +166,14 @@ tuple<string, float, unsigned int> Sklep::daj_losowy() {
 //    return false;
 //    }
 
+// usuwanie
+void Sklep::ustaw_Siec(Siec *S) {
+    if (siec){
 
-bool Sklep::ustaw_Siec(Siec *S) {
+        siec->operator-=(this);
+    }
     siec = S;
     cout<<"Sklep "<<x<<" "<<y<<" zmienił Sieć"<<endl;
-    return true;
 }
 
 
