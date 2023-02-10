@@ -14,17 +14,14 @@ using namespace std;
 class Siec: public J_Handlowa{
 private:
     vector<Sklep*> lista_sklepow = {};
-    double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marży
-    bool dodaj_Sklep(Sklep* S);//wciela Sklep do Sieci
-    bool usun_Sklep(Sklep* S);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
-
+    double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marżyusuniecie
 public:
     //gettery
     double daj_marza() const {return marza;}
     // metody
-    friend bool przejmij_Siec(Siec* S_przejmujaca,Siec* S_przejmowana);//przejmuje Sieć wraz ze sklepami
-    Siec& operator+=(Sklep* sk);
-    Siec& operator-=(Sklep* sk);
+    Siec& operator+=(Sklep* sk);//wciela Sklep do Sieci
+    Siec& operator-=(Sklep* sk);//usuwa Sklep z Sieci (Sklep staje się samodzielny)
+
 
     Siec& operator+=(Siec* si);
 
@@ -48,8 +45,6 @@ public:
     Siec& operator=(const Siec&) = default;
     Siec(Siec&&) = default;
     Siec& operator=(Siec&&) = default;
-    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
-    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
 
 };
 

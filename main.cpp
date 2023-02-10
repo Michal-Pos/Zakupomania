@@ -20,39 +20,6 @@ void print(string txt){
     cout<<txt <<endl;
 }
 
-//void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk){
-//
-//    if (!Si->czy_Sklep_w_Sieci(Sk)){// Jesli sklep znajduje się w Sieci
-//        if (Si->dodaj_Sklep(Sk) && Sk->ustaw_Siec(Si)) cout<<"Do Sieci  poprawnie dodano Sklep "<<Sk->daj_x()<<" "<<Sk->daj_y()<<endl;
-//        else
-//            cout<<"wystąpił błąd, nie udało się dodac sklepu do sieci "<<endl;
-//    }else
-//        cout<<"Sklep już się znajduje w Sieci"<<endl;//Sklep jest juz w Sieci, nic nie robimy
-//
-//}
-//void usun_Siec_Sklep(Siec* Si, Sklep* Sk) {
-//    if (Si->czy_Sklep_w_Sieci(Sk)) {
-//        if (Si->usun_Sklep(Sk) && Sk->ustaw_Siec(nullptr)) cout<<"Z Sieci został poprawnie usunięty Sklep"<<endl;
-//        else
-//            cout<<"wystąpił błąd, nie udało się poprawnie usunąc Sklepu z Sieci "<<endl;
-//    }
-//    else print("Sklep nie znajduje się w sieci, nie można go usunąć");
-//
-//}
-
-//bool przejmij_Siec(Siec *S_przejmujaca, Siec *S_przejmowana) {
-//    if (S_przejmujaca!=S_przejmowana){
-//        for (Sklep* sk: S_przejmowana->lista_sklepow){
-//            usun_Siec_Sklep(S_przejmowana, sk);
-//            dodaj_Siec_Sklep(S_przejmujaca, sk);
-//        }
-//        return true;
-//    }
-//    print("Zła instrukcja wejścia, Siec przejmująca i przejmowana są tymi samymi sieciami");
-//    return false;
-//}
-
-
 
 
 int generateRandomNumber(int n) {

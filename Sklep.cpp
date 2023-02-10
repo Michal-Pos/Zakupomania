@@ -20,17 +20,7 @@ Sklep& Sklep::operator+=(Towar* t) {
 }
 
 
-void Sklep::dodaj_Towar(Towar* T) {
-    cout<<"dodano towar "<<T->daj_nazwe()<<" w ilości: "<<T->daj_ilosc()<<endl;
-    for (Towar* t: towary){
-        if (t->daj_nazwe()==T->daj_nazwe()){
-            t->ustaw_ilosc(t->daj_ilosc()+T->daj_ilosc());
-            return; //zwiększenie ilości towaru
-        };
-    }
-    towary.push_back(T); //dodanie nowego towaru
 
-}
 
 void Sklep::wypisz_stan() {
     cout<<"----------------------"<<endl;
@@ -146,26 +136,6 @@ tuple<string, float, unsigned int> Sklep::daj_losowy() {
 
 
 
-
-
-//bool Sklep::sprzedaj_najdro_Towar() {
-//    if (!towary.empty()){
-//        Towar* najdr_Towar = towary.front();
-//        float najdro = najdr_Towar->daj_cene();
-//
-//        for (Towar* T: towary){
-//            if (T->daj_cene()>najdro){
-//                najdro = T->daj_cene();
-//                najdr_Towar = T;
-//            }
-//        }
-//        najdr_Towar->ustaw_ilosc(najdr_Towar->daj_ilosc() - 1);
-//        return true;
-//
-//    }
-//    return false;
-//    }
-
 // usuwanie
 void Sklep::ustaw_Siec(Siec *S) {
     if (siec){
@@ -178,27 +148,6 @@ void Sklep::ustaw_Siec(Siec *S) {
 
 
 
-//
-//
-//
-//bool Sklep::sprzedaj_Towar(Mieszkaniec* M, string nazwa, unsigned int ilosc) {
-//    for (Towar* T: towary){
-//        if (T->daj_nazwe()==nazwa){
-//            if (T->daj_ilosc()>=ilosc){
-//                if (M->daj_budzet())
-//                cout<<"Wysłano: "<< T->daj_nazwe()<<" w ilości "<<ilosc<<endl;
-//                T->ustaw_ilosc(T->daj_ilosc()-ilosc);
-//            } else
-//                cout<<"W sklepie nie ma pożądanej ilości"<< T->daj_nazwe()<<". Obecna ilość"<<ilosc<<endl;
-//
-//
-//
-//        };
-//    }
-//    cout<<"W sklepie nie ma "<<nazwa<<endl;
-//    return false;
-//
-//}
 
 
 

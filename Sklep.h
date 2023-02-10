@@ -33,11 +33,7 @@ public:
     tuple<string, float, unsigned int> daj_najtanszy();
     tuple<string, float, unsigned int> daj_losowy();
 
-    friend void dodaj_Siec_Sklep(Siec* Si, Sklep* Sk);
-    friend void usun_Siec_Sklep(Siec* Si, Sklep* Sk);
 
-
-    void dodaj_Towar(Towar* T);
     void wypisz_stan();
 
     //gettery
