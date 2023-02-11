@@ -63,40 +63,40 @@ int main() {
 //   C  |    D
     Miasto* Warszawa = Miasto::daj_miasto();
 //    Sklep Agrykola(17, 18);
-    Sklep Banacha(-19, 20);
-    Sklep Chmielna(-17, -18);
-    Sklep Dolna(4,-3);
-//    Towar T = Towar(4, 7, "Chleb");
-//    Banacha+=&T;
-
-
-    Siec Pierwsza_Siec(23);
-    Siec Druga_Siec(8);
-
-//    wygeneruj_asortyment(&Agrykola);
-//    wygeneruj_asortyment(&Agrykola);
-    wygeneruj_asortyment(&Banacha);
-//    wygeneruj_asortyment(&Chmielna);
-    wygeneruj_asortyment(&Dolna);
+//    Sklep Banacha(-19, 20);
+//    Sklep Chmielna(-17, -18);
+//    Sklep Dolna(4,-3);
+////    Towar T = Towar(4, 7, "Chleb");
+////    Banacha+=&T;
 //
 //
-//    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
-//    dodaj_Siec_Sklep(&Pierwsza_Siec, &Banacha);
+//    Siec Pierwsza_Siec(23);
+//    Siec Druga_Siec(8);
 //
-//    dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
-//    dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
-    Pierwsza_Siec+=&Dolna;
-    Pierwsza_Siec.wypisz_stan();
-
-//    Pierwsza_Siec-=&Dolna;
+////    wygeneruj_asortyment(&Agrykola);
+////    wygeneruj_asortyment(&Agrykola);
+//    wygeneruj_asortyment(&Banacha);
+////    wygeneruj_asortyment(&Chmielna);
+//    wygeneruj_asortyment(&Dolna);
+////
+////
+////    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
+////    dodaj_Siec_Sklep(&Pierwsza_Siec, &Banacha);
+////
+////    dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
+////    dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
+//    Pierwsza_Siec+=&Dolna;
 //    Pierwsza_Siec.wypisz_stan();
-
-    Druga_Siec+=&Banacha;
-    Druga_Siec.wypisz_stan();
-    Pierwsza_Siec+=&Druga_Siec;
-//    Druga_Siec-=&Banacha;
-//    Pierwsza_Siec.wypisz_stan();
-    Druga_Siec.wypisz_stan();
+//
+////    Pierwsza_Siec-=&Dolna;
+////    Pierwsza_Siec.wypisz_stan();
+//
+//    Druga_Siec+=&Banacha;
+//    Druga_Siec.wypisz_stan();
+//    Pierwsza_Siec+=&Druga_Siec;
+////    Druga_Siec-=&Banacha;
+////    Pierwsza_Siec.wypisz_stan();
+//    Druga_Siec.wypisz_stan();
 
 //    Banacha.daj_siec()->wypisz_stan();
 

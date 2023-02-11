@@ -93,3 +93,10 @@ bool Siec::czy_Sklep_w_Sieci(Sklep* S) {
     }
     return false;
 }
+
+Siec::~Siec() {
+    for (auto* Sk: lista_sklepow){
+        delete Sk;
+    }
+
+}
