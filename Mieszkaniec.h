@@ -12,12 +12,13 @@ class Mieszkaniec{
 protected:
     float x,y;
     double budzet;
+    string imie; //nie jest identyfikatorem osoby, służy tylko do debugownia
 public:
     virtual bool kup() = 0;
 
     double daj_budzet() const {return budzet;}
 
-    Mieszkaniec(double _budzet, float _x, float _y): budzet(_budzet), x(_x), y(_y){};
+    Mieszkaniec(double _budzet, float _x, float _y, string _imie): budzet(_budzet), x(_x), y(_y), imie(_imie){};
 
     Mieszkaniec(const Mieszkaniec&) = delete;
     Mieszkaniec& operator=(const Mieszkaniec&) = delete;

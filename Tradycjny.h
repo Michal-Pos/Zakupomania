@@ -16,7 +16,7 @@ public:
     bool kup();
     void wypisz_stan();
 
-    Tradycjny(float _x, float _y, double _budzet, string _szukany_T): Poszukiwacz(_budzet, _x, _y, _szukany_T){}
+    Tradycjny(float _x, float _y, double _budzet, string imie, string _szukany_T): Poszukiwacz(_budzet, _x, _y, imie, _szukany_T){}
 
     Tradycjny(const Tradycjny&) = delete;
     Tradycjny& operator=(const Tradycjny&) = delete;// kopiowanie obiektu

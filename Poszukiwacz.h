@@ -13,7 +13,7 @@ protected:
     string szukany_T;
 public:
     virtual bool kup() = 0;
-    Poszukiwacz(double _budzet , float _x, float _y, string _szuka_T): Mieszkaniec(_budzet,_x,_y), szukany_T(_szuka_T){}
+    Poszukiwacz(double _budzet , float _x, float _y, string imie, string _szuka_T): Mieszkaniec(_budzet,_x,_y, imie), szukany_T(_szuka_T){}
 
     Poszukiwacz(const Poszukiwacz&) = delete;
     Poszukiwacz& operator=(const Poszukiwacz&) = delete;

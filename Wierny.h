@@ -11,7 +11,7 @@ protected:
     Sklep* ulubiony;
 public:
 //    void kup_Towar(string nazwa);
-    Wierny(Sklep* Sk,double _budzet , float _x, float _y): Mieszkaniec(_budzet,_x,_y), ulubiony(Sk){}
+    Wierny(Sklep* Sk,double _budzet , float _x, float _y, string imie): Mieszkaniec(_budzet,_x,_y, imie), ulubiony(Sk){}
 
     Wierny(const Wierny&) = delete;
     Wierny& operator=(const Wierny&) = delete;

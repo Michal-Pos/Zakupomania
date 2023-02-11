@@ -13,7 +13,7 @@ public:
     bool kup();
     void wypisz_stan();
 
-    Oszczedny(float _x, float _y, double _budzet, string _szukany_T): Poszukiwacz(_budzet, _x, _y, _szukany_T){}
+    Oszczedny(float _x, float _y, double _budzet, string _szukany_T): Poszukiwacz(_budzet, _x, _y, imie, _szukany_T){}
 
     Oszczedny(const Oszczedny&) = delete;
     Oszczedny& operator=(const Oszczedny&) = delete;// kopiowanie obiektu

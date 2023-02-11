@@ -15,7 +15,7 @@ private:
 public:
     bool kup();
     void wypisz_stan();
-    Losowy(Sklep* S, float _x, float _y, double _budzet): Wierny(S,_budzet , _x, _y){}
+    Losowy(Sklep* S, float _x, float _y, double _budzet, string imie): Wierny(S,_budzet , _x, _y, imie){}
 
     Losowy(const Losowy&) = delete;
     Losowy& operator=(const Losowy&) = delete;// kopiowanie obiektu

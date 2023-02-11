@@ -46,7 +46,7 @@ Sklep *Oszczedny::znajdz_najtan() {
 
 bool Oszczedny::kup() {
     cout<<"Rozpoczęto kupowanie dla klienta Oszczednego "<<x<<" "<<y<<endl;
-    Sklep* S = znajdz_najtan();
+    Sklep* S = znajdz_najtan();// znajduje Sklep w którym jest najtańszy sklep (Jesli taki istnieje)
     if (S){
         auto towar = S->sprawdz_Towar(szukany_T);
         float cena = get<1>(towar);
