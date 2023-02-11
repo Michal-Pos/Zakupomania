@@ -5,7 +5,8 @@
 #include "Minimalista.h"
 
 bool Minimalista::kup() {
-    cout<<"Rozpoczęto kupowanie dla klienta Minimalista "<<x<<" "<<y<<endl;
+    cout<<"Rozpoczęto kupowanie dla klienta Minimalista:"<<endl;
+    wypisz_id();
     if(!ulubiony->czy_w_Sieci()){
         tuple<string, float, unsigned int> najtan = ulubiony->daj_najtanszy();
         string nazwa = get<0>(najtan);
@@ -17,7 +18,7 @@ bool Minimalista::kup() {
             cout<<"Udało się kupić najtanszy towar"<<nazwa <<" w cenie "<<cena<<endl;
             return true;
         };
-        cout<<"Mieszkaniec nie ma wystarczającej ilości środków"<<endl;
+        cout<<"Mieszkaniec nie ma wystarczającej ilości środków lub w sklepie nie ma dostępnego żadnego towaru"<<endl;
     } else cout<<"Sklep znajduje się w Sieci, nie mozna w nim kupic towaru"<<endl;
 
     return false;
@@ -25,5 +26,6 @@ bool Minimalista::kup() {
 }
 
 void Minimalista::wypisz_stan() {
-    cout<<"Minimalista "<<x<<" "<<y<<" "<<budzet<<endl;
+    cout<<"Status Minimalista"<<endl;
+    wypisz_id();
 }

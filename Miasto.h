@@ -28,6 +28,7 @@ public:
     vector<Sklep*> daj_sklepy() const {return lista_sklepow;}
     vector<J_Handlowa*> daj_handlowe() const {return lista_handlowych;}
     void wypisz_stan();
+    void wszyscy_kup();
 
     //Konstruktor
     Miasto() = default; //zakładamy jedno miasto

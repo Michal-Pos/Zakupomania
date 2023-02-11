@@ -16,6 +16,7 @@ protected:
 public:
     virtual bool kup() = 0;
     virtual void wypisz_stan() = 0;
+    void wypisz_id() {cout<<"Imię: "<<imie<<" budżet: "<<budzet<<" lokalizacja:"<<x <<" "<<y << endl;}
 
     double daj_budzet() const {return budzet;}
 

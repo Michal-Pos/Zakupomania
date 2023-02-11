@@ -98,7 +98,8 @@ int main() {
 
     Sklep* Chmielna = new Sklep(-19, 20);
     Sklep* Dolna = new Sklep(4,-3);
-    vector<Sklep*> lista_sklepow = {Agrykola, Banacha, Chmielna, Dolna};
+    Sklep* Elblaska = new Sklep(4,-4);
+    vector<Sklep*> lista_sklepow = {Agrykola, Banacha, Chmielna, Dolna, Elblaska};
     for (auto* sk: lista_sklepow){
         Warszawa->operator+=(sk);
         sk->wypisz_stan();
@@ -131,17 +132,22 @@ int main() {
     Pierwsza_Siec->operator+=(Druga_Siec);
 
 //4. Tworzenie klientów rozmaitych rodzajów (co najmniej jeden klient każdego rodzaju).
-    auto* Miriam = new Minimalista(Banacha, 13, -1, -3, "Miriam");
-    auto* Maks = new Maksymalista(Banacha, 5, -3, 43, "Maks");
-    auto* Lena = new Losowy(Agrykola, 1,1, 70, "Lena");
-
+    auto* Miriam = new Minimalista(Elblaska, 13, -1, -3, "Miriam");
+    auto* Maks = new Maksymalista(Elblaska, 5, -3, 43, "Maks");
+    auto* Lena = new Losowy(Elblaska, 1,1, 70, "Lena");
+    Miriam->wypisz_id();
+//
     auto* Tomek = new Tradycjny(-4, -8, 8, "Tomek", "Chleb");
     auto* Ola = new Oszczedny(7,7, 10, "Mleko");
-    vector<Mieszkaniec*> lista_miesz = {Miriam, Maks, Lena, Tomek, Ola};
+    vector<Mieszkaniec*> lista_miesz = {Tomek, Ola};
     for (auto* m: lista_miesz){
         Warszawa->operator+=(m);
     }
-    Warszawa->wypisz_stan();
+//    Warszawa->operator+=(Miriam);
+//    Warszawa->operator+=(Maks);
+
+//    Warszawa->wypisz_stan();
+    Warszawa->wszyscy_kup();
 
 //5. Wypisanie stanu symulacji (stan sklepów i kupujących).
 

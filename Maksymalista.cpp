@@ -5,7 +5,8 @@
 #include "Maksymalista.h"
 
 bool Maksymalista::kup() {
-    cout<<"Rozpoczęto kupowanie dla klienta Maksymalista "<<x<<" "<<y<<endl;
+    cout<<"Rozpoczęto kupowanie dla klienta Maksymalista "<<endl;
+    wypisz_id();
     if (!ulubiony->czy_w_Sieci()){
         tuple<string, float, unsigned int> najdro = ulubiony->daj_najdrozszy();
         string nazwa = get<0>(najdro);
@@ -17,11 +18,13 @@ bool Maksymalista::kup() {
             cout<<"Udało się kupić najdroższy towar"<<nazwa <<" w cenie "<<cena<<endl;
             return true;
         };
+        cout<<"Mieszkaniec nie ma wystarczającej ilości środków lub w sklepie nie ma dostępnego żadnego towaru"<<endl;
     }else cout<<"Sklep znajduje się w Sieci, nie mozna w nim kupic towaru"<<endl;
     return false;
 
 }
 
 void Maksymalista::wypisz_stan() {
-    cout<<"Maksymalista "<<x<<" "<<y<<" "<<budzet<<endl;
+    cout<<"Status Maksymalista"<<endl;
+    wypisz_id();
 }

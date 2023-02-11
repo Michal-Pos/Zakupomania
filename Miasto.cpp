@@ -47,6 +47,13 @@ void Miasto::wypisz_stan() {
 
 }
 
+void Miasto::wszyscy_kup() {
+    for (auto* m: lista_mieszkancow){
+        m->kup();
+    }
+
+}
+
 
 
 
