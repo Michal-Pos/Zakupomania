@@ -41,7 +41,7 @@ public:
     //techniczne
     Siec(const Siec&) = delete; //kopiujący
     virtual ~Siec();
-    Siec& operator=(const Siec&) = delete;
+//    Siec& operator=(const Siec&) = delete;
     Siec(Siec&&) = delete;
     Siec& operator=(Siec&&) = delete;
 

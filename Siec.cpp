@@ -58,7 +58,7 @@ Siec &Siec::operator+=(Sklep *sk) {
         sk->ustaw_siec(this);
         lista_sklepow.push_back(sk);
     }
-    return *this;
+    return *this; //Problem jest tutaj
 }
 
 Siec &Siec::operator-=(Sklep *sk) {
@@ -95,7 +95,7 @@ bool Siec::czy_Sklep_w_Sieci(Sklep* S) {
 }
 
 Siec::~Siec() {
-    for (auto* Sk: lista_sklepow){
+    for (auto Sk: lista_sklepow){
         delete Sk;
     }
 
