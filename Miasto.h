@@ -15,14 +15,14 @@ class Miasto {
 private:
     vector<Mieszkaniec*> lista_mieszkancow = {}; //Mieszkańcy
     vector<Sklep*> lista_sklepow = {}; // Sklepy
+    vector<J_Handlowa*> lista_handlowych = {}; //Lista wszystkich Jednostek Handlowych
 public:
     Miasto& operator+=(Mieszkaniec* m);
     Miasto& operator-=(Mieszkaniec* m);
 
     Miasto& operator+=(Sklep* sk);
+    Miasto& operator+=(J_Handlowa* jh);
 
-    bool dodaj_sklep(Sklep* Sk);
-    bool dodaj_Mieszkanca(Mieszkaniec* M);
     //gettery
     vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
     vector<Sklep*> daj_sklepy() const {return lista_sklepow;}
