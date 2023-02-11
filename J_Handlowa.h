@@ -20,11 +20,10 @@ public:
     virtual void wypisz_stan()=0;
 //    virtual bool sprzedaj_Towar(string nazwa, unsigned int ilosc)=0;
 
-
-    J_Handlowa() = default;
+    J_Handlowa() = default; //KOnstruktor aby można było mieć ogólne rzeczy w liście
     J_Handlowa(const J_Handlowa&) = delete;
     J_Handlowa& operator=(const J_Handlowa&) = delete;
-    virtual ~J_Handlowa(){};
+    virtual ~J_Handlowa()=default;
     J_Handlowa(J_Handlowa&&) = delete;
     J_Handlowa& operator=(J_Handlowa&&) = delete;
 

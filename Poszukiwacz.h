@@ -17,7 +17,7 @@ public:
 
     Poszukiwacz(const Poszukiwacz&) = delete;
     Poszukiwacz& operator=(const Poszukiwacz&) = delete;
-    virtual ~Poszukiwacz(){};
+    virtual ~Poszukiwacz() = default;
     Poszukiwacz(Poszukiwacz&&) = delete;
     Poszukiwacz& operator=(Poszukiwacz&&) = delete;
 };

@@ -31,11 +31,11 @@ public:
 
     // techniczne, wszystkie standardowe, nie będziemy mieć żadnych atrybutów bedących listami
     Towar() = delete;
-    Towar(const Towar&) = default;
-    Towar& operator=(const Towar&) = default;// kopiowanie obiektu
+    Towar(const Towar&) = delete;
+    Towar& operator=(const Towar&) = delete;// kopiowanie obiektu
     ~Towar() = default;
-    Towar(Towar&&) = default;
-    Towar& operator=(Towar&&) = default;// kopiowanie obiektu przez kopiowane adresu
+    Towar(Towar&&) = delete;
+    Towar& operator=(Towar&&) = delete;// kopiowanie obiektu przez kopiowane adresu
 };
 
 

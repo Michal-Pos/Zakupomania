@@ -13,11 +13,11 @@ public:
     void wypisz_stan();
     Maksymalista(Sklep* S, float _x, float _y, double _budzet): Wierny(S,_budzet , _x, _y){}
 
-    Maksymalista(const Maksymalista&) = default;
-    Maksymalista& operator=(const Maksymalista&) = default;// kopiowanie obiektu
+    Maksymalista(const Maksymalista&) = delete;
+    Maksymalista& operator=(const Maksymalista&) = delete;// kopiowanie obiektu
     ~Maksymalista() = default;
-    Maksymalista(Maksymalista&&) = default;
-    Maksymalista& operator=(Maksymalista&&) = default;
+    Maksymalista(Maksymalista&&) = delete;
+    Maksymalista& operator=(Maksymalista&&) = delete;
 };
 
 

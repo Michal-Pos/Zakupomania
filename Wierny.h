@@ -15,7 +15,7 @@ public:
 
     Wierny(const Wierny&) = delete;
     Wierny& operator=(const Wierny&) = delete;
-    virtual ~Wierny(){};
+    virtual ~Wierny()= default;
     Wierny(Wierny&&) = delete;
     Wierny& operator=(Wierny&&) = delete;
 

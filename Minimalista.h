@@ -19,6 +19,7 @@ public:
     Minimalista& operator=(const Minimalista&) = delete;
     Minimalista(Minimalista&&) = delete;
     Minimalista& operator=(Minimalista&&) = delete;
+    ~Minimalista() = default;
 
 };
 

@@ -37,7 +37,6 @@ public:
 
     //Konstruktor
     Siec(double _marza): marza(_marza){};
-    virtual ~Siec() = default;
 
     //techniczne
     Siec() = default;

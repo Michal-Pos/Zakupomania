@@ -51,15 +51,14 @@ public:
     Sklep(float _x, float _y): x(_x),y(_y), siec(nullptr){}
 
 
-    virtual ~Sklep() = default;
 
     //techniczne
     Sklep() = default;
-
-    Sklep(const Sklep&) = default;
-    Sklep& operator=(const Sklep&) = default;
-    Sklep(Sklep&&) = default;
-    Sklep& operator=(Sklep&&) = default;
+    ~Sklep() = default;
+    Sklep(const Sklep&) = delete;
+    Sklep& operator=(const Sklep&) = delete;
+    Sklep(Sklep&&) = delete;
+    Sklep& operator=(Sklep&&) = delete;
 
 
 };

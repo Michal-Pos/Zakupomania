@@ -15,15 +15,15 @@ protected:
 public:
     virtual bool kup() = 0;
 
-    double daj_budzet() {return budzet;}
+    double daj_budzet() const {return budzet;}
 
     Mieszkaniec(double _budzet, float _x, float _y): budzet(_budzet), x(_x), y(_y){};
 
-    Mieszkaniec(const Mieszkaniec&) = default;
-    Mieszkaniec& operator=(const Mieszkaniec&) = default;
-    virtual ~Mieszkaniec(){};
-    Mieszkaniec(Mieszkaniec&&) = default;
-    Mieszkaniec& operator=(Mieszkaniec&&) = default;
+    Mieszkaniec(const Mieszkaniec&) = delete;
+    Mieszkaniec& operator=(const Mieszkaniec&) = delete;
+    virtual ~Mieszkaniec() = default;
+    Mieszkaniec(Mieszkaniec&&) = delete;
+    Mieszkaniec& operator=(Mieszkaniec&&) = delete;
 };
 
 
