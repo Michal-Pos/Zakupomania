@@ -15,11 +15,11 @@ public:
     virtual bool kup() = 0;
     Poszukiwacz(double _budzet , float _x, float _y, string _szuka_T): Mieszkaniec(_budzet,_x,_y), szukany_T(_szuka_T){}
 
-    Poszukiwacz(const Poszukiwacz&) = default;
-    Poszukiwacz& operator=(const Poszukiwacz&) = default;
+    Poszukiwacz(const Poszukiwacz&) = delete;
+    Poszukiwacz& operator=(const Poszukiwacz&) = delete;
     virtual ~Poszukiwacz(){};
-    Poszukiwacz(Poszukiwacz&&) = default;
-    Poszukiwacz& operator=(Poszukiwacz&&) = default;
+    Poszukiwacz(Poszukiwacz&&) = delete;
+    Poszukiwacz& operator=(Poszukiwacz&&) = delete;
 };
 
 
