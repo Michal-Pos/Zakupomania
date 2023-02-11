@@ -26,5 +26,5 @@ bool Losowy::kup() {
 }
 
 void Losowy::wypisz_stan() {
-    cout<<"Losowy "<<x<<" "<<y<<" "<<budzet<<endl;
+    cout<<"Losowy:"<<imie<<" "<<x<<" "<<y<<" "<<budzet<<endl;
 }

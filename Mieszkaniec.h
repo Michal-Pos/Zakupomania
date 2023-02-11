@@ -15,6 +15,7 @@ protected:
     string imie; //nie jest identyfikatorem osoby, służy tylko do debugownia
 public:
     virtual bool kup() = 0;
+    virtual void wypisz_stan() = 0;
 
     double daj_budzet() const {return budzet;}
 

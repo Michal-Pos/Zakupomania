@@ -78,7 +78,7 @@ Siec &Siec::operator+=(Siec *si) {
         si->operator-=(sk);
         sk->ustaw_siec(this);
     }
-//    delete si;
+    delete si;
     return *this;
 }
 

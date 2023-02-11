@@ -13,9 +13,9 @@ using namespace std;
 
 class Miasto {
 private:
-    vector<Mieszkaniec*> lista_mieszkancow = {}; //Mieszkańcy
+    vector<Mieszkaniec*> lista_mieszkancow; //Mieszkańcy
     vector<Sklep*> lista_sklepow = {}; // Sklepy
-    vector<J_Handlowa*> lista_handlowych = {}; //Lista wszystkich Jednostek Handlowych
+    vector<J_Handlowa*> lista_handlowych; //Lista wszystkich Jednostek Handlowych
 public:
     Miasto& operator+=(Mieszkaniec* m);
     Miasto& operator-=(Mieszkaniec* m);
@@ -31,7 +31,7 @@ public:
 
     //Konstruktor
     Miasto() = default; //zakładamy jedno miasto
-    //techniczne\
+    //techniczne
     Miasto(const Miasto&) = delete; //kopiujący, zakłądamy że nie ma innych miast
     Miasto& operator=(const Miasto&) = delete; // nie kopiujemy miast
     Miasto(Miasto&&) = delete; // miasto jest tylko jedno
