@@ -36,21 +36,24 @@ int generateRandomNumber(int n) {
 }
 
 Sklep* wygeneruj_asortyment(Sklep* S){
-    vector<string> l = {"Chleb", "Mleko", "Jajka", "Ser", "Masło", "Cukier", "Herbata", "Kawa", "Cebula", "Ziemniaki"};
+    vector<string> l = {"Chleb", "Mleko", "Jajka"};
     int ilosc_produktow = generateRandomNumber(10);
     cout<<ilosc_produktow<<endl;
     vector<Towar> lista_Towarow;
-
-    for (int i = 0; i<min((int)l.size(), ilosc_produktow); i++){
-
+    for (auto s: l){
         float cena = generateRandomNumber(30);
         int ilosc = generateRandomNumber(20);
 //        S+= Towar(ilosc, cena, l[i]);
 //        auto* T = new Towar(ilosc, cena, l[i]);
-        S->operator+=(new Towar(ilosc, cena, l[i]));
+        S->operator+=(new Towar(ilosc, cena, s));
+    }
+
+//    for (int i = 0; i<min((int)l.size(), ilosc_produktow); i++){
+
+
 //        S+= new Towar(ilosc, cena, l[i]);
 //        S->dodaj_Towar(T);
-    }
+//    }
 //    for (Towar towar: lista_Towarow){
 //        S->dodaj_Towar(&towar);
 //    }
@@ -66,12 +69,8 @@ int main() {
 //   B  |    A
 //---------------
 //   C  |    D
-//1. Tworzenie miasta i zwykłych sklepów. Każdy sklep powinien mieć co najmniej dwa towary z niezerową
-//liczbą sztuk.
+//1a. Tworzenie miasta i zwykłych sklepów.
     Miasto* Warszawa = Miasto::daj_miasto();
-
-    // II wersja
-
 
     Sklep* Agrykola = new Sklep(17,18);
     Sklep* Banacha = new Sklep(-7,3);
@@ -79,15 +78,26 @@ int main() {
     Sklep* Chmielna = new Sklep(-19, 20);
     Sklep* Dolna = new Sklep(4,-3);
     Sklep* Elblaska = new Sklep(4,-4);
-//    Elblaska->operator+=(new Towar(40, 1, "Chleb"));
     vector<Sklep*> lista_sklepow = {Agrykola, Banacha, Chmielna, Dolna, Elblaska};
 //    vector<Sklep*> lista_sklepow = {Elblaska};
 
+
+//    Elblaska->operator+=(new Towar(40, 1, "Chleb"));
+
+//1b. Każdy sklep powinien mieć co najmniej dwa towary z niezerową
+//liczbą sztuk.
     for (auto* sk: lista_sklepow){
         Warszawa->operator += (sk);
+        wygeneruj_asortyment(sk);
         sk->wypisz_stan();
     }
     Warszawa->wypisz_stan();
+//    Agrykola->operator+=(new Towar(10,18, "Mleko"));
+//    Agrykola->operator+=(new Towar(7,3, "Chleb"));
+//
+
+
+
 
 
 //    wygeneruj_asortyment(Agrykola);
@@ -100,44 +110,45 @@ int main() {
 
 //2. Stworzenie co najmniej dwu sieci (z co najmniej dwoma z wcześniej utworzonych sklepów każda).
 
-    Siec* Pierwsza_Siec  = new Siec(23);
-    Siec* Druga_Siec  = new Siec(8);
-
-    Warszawa->operator+=(Druga_Siec);
-    Warszawa->operator+=(Pierwsza_Siec);
-
-    Pierwsza_Siec->operator+=(Agrykola);
-    Pierwsza_Siec->operator+=(Banacha);
-
-    Druga_Siec->operator+=(Chmielna);
-    Druga_Siec->operator+=(Dolna);
+//    Siec* Pierwsza_Siec  = new Siec(23);
+//    Siec* Druga_Siec  = new Siec(8);
+//
+//    Warszawa->operator+=(Druga_Siec);
+//    Warszawa->operator+=(Pierwsza_Siec);
+//
+//    Pierwsza_Siec->operator+=(Agrykola);
+//    Pierwsza_Siec->operator+=(Banacha);
+//
+//    Druga_Siec->operator+=(Chmielna);
+//    Druga_Siec->operator+=(Dolna);
 
 //3. Przejęcie jednej sieci przez drugą.
-    Pierwsza_Siec->operator+=(Druga_Siec);
+
+//    Pierwsza_Siec->operator+=(Druga_Siec);
 
 //4. Tworzenie klientów rozmaitych rodzajów (co najmniej jeden klient każdego rodzaju).
-    auto* Miriam = new Minimalista(Elblaska, 13, -1, -3, "Miriam");
-    auto* Maks = new Maksymalista(Elblaska, 5, -3, 43, "Maks");
-    auto* Lena = new Losowy(Elblaska, 1,1, 70, "Lena");
-    Miriam->wypisz_id();
+    auto* Miriam = new Minimalista(Elblaska, 30, -1, -3, "Miriam");
+    auto* Maks = new Maksymalista(Elblaska, 5, -3, 30, "Maks");
+    auto* Lena = new Losowy(Elblaska, 30,1, 70, "Lena");
 //
     auto* Tomek = new Tradycjny(-4, -8, 8, "Tomek", "Chleb");
     auto* Ola = new Oszczedny(7,7, 10, "Mleko");
     Warszawa->daj_niezalezne_sklepy();
 
-    vector<Mieszkaniec*> lista_miesz = {Tomek, Ola};
-    Tomek->kup();
+    vector<Mieszkaniec*> lista_miesz = {Miriam, Maks, Lena, Tomek, Ola};
+//    Miasto
+//    Tomek->kup();
 //    cout<<Elblaska->czy_Siec()<<endl;
 //    cout<<Pierwsza_Siec->czy_Siec()<<endl;
 
-//    for (auto* m: lista_miesz){
-//        Warszawa->operator+=(m);
-//    }
+    for (auto* m: lista_miesz){
+        Warszawa->operator+=(m);
+    }
 //    Warszawa->operator+=(Miriam);
 //    Warszawa->operator+=(Maks);
 
 //    Warszawa->wypisz_stan();
-//    Warszawa->wszyscy_kup();
+    Warszawa->wszyscy_kup();
 
 //5. Wypisanie stanu symulacji (stan sklepów i kupujących).
 

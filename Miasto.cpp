@@ -34,6 +34,7 @@ Miasto &Miasto::operator+=(J_Handlowa *jh) {
 
 
 
+
 void Miasto::wypisz_stan() {
     cout<<"*******************"<<endl;
     cout<<"W mieście znajduje się: "<<endl;

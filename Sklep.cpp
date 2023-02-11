@@ -68,7 +68,7 @@ bool Sklep::sprzedaj_Towar(string nazwa, unsigned int ilosc) {
             cout<<"Sprzedano "<<nazwa<<" w ilości "<<ilosc<<endl;
             return true;
         }
-        cout<<"W sklepie nie ma wystarczającej ilości"<<nazwa<<", obecnie znajduje się"<<ilosc<<endl;
+
     }
     return false;
 }

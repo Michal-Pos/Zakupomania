@@ -32,6 +32,7 @@ public:
 
     tuple<string , float, unsigned int> sprawdz_Towar(Sklep *S, string nazwa, unsigned int ilosc);
     bool sprzedaj_Towar(Sklep* S, string nazwa, unsigned int ilosc); //będzie zmniejszał budżet mieszkańca oraz zmniejszał ilość towaru odpowiedniego sklepu
+    Sklep* znajdz_najtanszy(string nazwa);
     bool czy_Siec(){return true;}
     void wypisz_stan();
 

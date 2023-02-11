@@ -23,7 +23,7 @@ tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
 }
 
 
-float Siec::uwzglednij_marze(float stara_cena) {return stara_cena*(ceil(1 + marza)/100);}
+float Siec::uwzglednij_marze(float stara_cena) {return stara_cena*(ceil(100 + marza)/100);}
 
 tuple<string , float, unsigned int> Siec::sprawdz_Towar(Sklep *S, string nazwa, unsigned int ilosc) {
     if (czy_Sklep_w_Sieci(S)){
@@ -78,6 +78,7 @@ Siec &Siec::operator+=(Siec *si) {
         si->operator-=(sk);
         sk->ustaw_siec(this);
     }
+
     delete si;
     return *this;
 }
@@ -97,4 +98,25 @@ Siec::~Siec() {
         delete Sk;
     }
 
+}
+
+Sklep *Siec::znajdz_najtanszy(string nazwa) {
+    float cena = INFINITY;
+    float nowa_cena;
+    tuple<string , float, unsigned int> sprawdzany_Towar;
+    Sklep* najtanszy_Sklep = nullptr;
+
+    for (auto sk: lista_sklepow) {
+        sprawdzany_Towar = sk->sprawdz_Towar(nazwa);
+        nowa_cena = get<1>(sprawdzany_Towar);
+//        ilosc =
+//        if (cena > nowa_cena && get<2>(sprawdzany_Towar)) {
+//            cena = nowa_cena;
+//            najtanszy_Sklep = sk;
+//        }
+    }
+    if (cena!=INFINITY){
+        return najtanszy_Sklep;
+    } else return nullptr;
+    return nullptr;
 }
