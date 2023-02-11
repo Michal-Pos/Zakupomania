@@ -28,12 +28,15 @@ Sklep *Oszczedny::znajdz_najtan() {
     float nowa_cena;
     tuple<string , float, unsigned int> sprawdzany_Towar;
     Sklep* najtanszy_Sklep = nullptr;
-    for (Sklep* Sk: Miasto::daj_miasto()->daj_sklepy()) {
-        sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
-        nowa_cena = get<1>(sprawdzany_Towar);
-        if (cena > nowa_cena && get<2>(sprawdzany_Towar)) {
-            cena = nowa_cena;
-            najtanszy_Sklep = Sk;
+    for (auto* Jh: Miasto::daj_miasto()->daj_handlowe()) {
+        if (!Jh->czy_Siec()) {// Pomijamy Sieci
+            auto* Sk = dynamic_cast<Sklep *>(Jh);
+            sprawdzany_Towar = Jh->sprawdz_Towar(szukany_T);
+            nowa_cena = get<1>(sprawdzany_Towar);
+            if (cena > nowa_cena && get<2>(sprawdzany_Towar)) {
+                cena = nowa_cena;
+                najtanszy_Sklep = Sk;
+            }
         }
     }
     if (cena!=INFINITY){

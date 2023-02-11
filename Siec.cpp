@@ -18,11 +18,11 @@ tuple<string, float, unsigned int> Siec::sprawdz_Towar(string nazwa) {
         }
         cout<<"W Sieci nie ma Sklepu z "<<nazwa<<endl;
     } else cout<<"W Sieci nie ma sklepów, nie można sprawdzić towarów"<<endl;
-
-
     tuple<string , float, unsigned int> wynik = make_tuple("", 0, 0);
     return wynik;
 }
+
+
 float Siec::uwzglednij_marze(float stara_cena) {return stara_cena*(ceil(1 + marza)/100);}
 
 tuple<string , float, unsigned int> Siec::sprawdz_Towar(Sklep *S, string nazwa, unsigned int ilosc) {
