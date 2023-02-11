@@ -58,6 +58,7 @@ Siec &Siec::operator+=(Sklep *sk) {
         sk->ustaw_siec(this);
         lista_sklepow.push_back(sk);
     }
+    wypisz_stan();
     return *this; //Problem jest tutaj
 }
 
@@ -80,9 +81,6 @@ Siec &Siec::operator+=(Siec *si) {
 //    delete si;
     return *this;
 }
-
-
-
 
 
 bool Siec::czy_Sklep_w_Sieci(Sklep* S) {

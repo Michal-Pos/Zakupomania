@@ -15,7 +15,7 @@ using namespace std;
 class Sklep:public J_Handlowa{
 private:
     //+marża jako atrybut w przypadku dziedziczenia z klasy Sieć
-    vector<Towar*> towary = {};
+    vector<Towar*> towary;
     Siec* siec;
     float x,y;
     // settery
@@ -49,8 +49,6 @@ public:
 //    float daj_marze();
 
     Sklep(float _x, float _y): x(_x),y(_y), siec(nullptr){}
-
-
 
     //techniczne
     ~Sklep() = default;

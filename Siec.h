@@ -13,7 +13,7 @@ using namespace std;
 
 class Siec: public J_Handlowa{
 private:
-    vector<Sklep*> lista_sklepow = {};
+    vector<Sklep*> lista_sklepow;
     double marza; //będziemy chcieli aby sklep miał dostęp do wysokości marżyusuniecie
 public:
     //gettery
@@ -41,7 +41,7 @@ public:
     //techniczne
     Siec(const Siec&) = delete; //kopiujący
     virtual ~Siec();
-//    Siec& operator=(const Siec&) = delete;
+    Siec& operator=(const Siec&) = delete;
     Siec(Siec&&) = delete;
     Siec& operator=(Siec&&) = delete;
 

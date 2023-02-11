@@ -8,10 +8,9 @@
 #include <cmath>
 
 Sklep& Sklep::operator+=(Towar* t) {
-    towary.push_back(t);
-    for (Towar* t: towary){
-        if (t->daj_nazwe()==t->daj_nazwe()){
-            t->ustaw_ilosc(t->daj_ilosc()+t->daj_ilosc());
+    for (Towar* t_lista: towary){
+        if (t_lista->daj_nazwe()==t->daj_nazwe()){
+            t->ustaw_ilosc(t->daj_ilosc()+t_lista->daj_ilosc());
             return *this; //zwiększenie ilości towaru
         };
     }

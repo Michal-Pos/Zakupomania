@@ -62,25 +62,35 @@ int main() {
 //---------------
 //   C  |    D
     Miasto* Warszawa = Miasto::daj_miasto();
-    Sklep Agrykola(17, 18);
-    Sklep Banacha(-19, 20);
-    Sklep Chmielna(-17, -18);
-    Sklep Dolna(4,-3);
+    auto Agrykola = new Sklep(17, 18);
+
+    auto Banacha = new Sklep(-19, 20);
+    auto Chmielna = new Sklep(-19, 20);
+    auto Dolna = new Sklep(4,-3);
 
 ////    Towar T = Towar(4, 7, "Chleb");
 ////    Banacha+=&T;
 //
 //
     Siec Pierwsza_Siec(23);
-    Pierwsza_Siec+=&Dolna;
 
     Siec Druga_Siec(8);
+    wygeneruj_asortyment(Dolna);
+//    Pierwsza_Siec+=&Druga_Siec;
 //
+
+    Pierwsza_Siec+=Agrykola;
+    Pierwsza_Siec.wypisz_stan();
+
+    Druga_Siec+=Dolna;
+
+    Pierwsza_Siec+=&Druga_Siec;
+
+
 ////    wygeneruj_asortyment(&Agrykola);
-////    wygeneruj_asortyment(&Agrykola);
-    wygeneruj_asortyment(&Banacha);
+//    wygeneruj_asortyment(&Banacha);
 ////    wygeneruj_asortyment(&Chmielna);
-    wygeneruj_asortyment(&Dolna);
+//    wygeneruj_asortyment(&Dolna);
 ////
 ////
 ////    dodaj_Siec_Sklep(&Pierwsza_Siec, &Agrykola);
@@ -88,7 +98,7 @@ int main() {
 ////
 ////    dodaj_Siec_Sklep(&Druga_Siec, &Agrykola);
 ////    dodaj_Siec_Sklep(&Pierwsza_Siec, &Dolna);
-    Pierwsza_Siec.wypisz_stan();
+//    Pierwsza_Siec.wypisz_stan();
 //
 ////    Pierwsza_Siec-=&Dolna;
 ////    Pierwsza_Siec.wypisz_stan();
