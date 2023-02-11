@@ -16,14 +16,17 @@ Sklep *Tradycjny::znajdz_najbliz() {
     float nowa_odleg;
     tuple<string , float, unsigned int> sprawdzany_Towar;
     Sklep* najblizszy_Sklep = nullptr;
-    for (Sklep* Sk: Miasto::daj_miasto()->daj_sklepy()){
-        nowa_odleg = odleglosc(Sk->daj_x(), Sk->daj_y());
-        if (nowa_odleg < odleg){// sprawdzamy czy odległość jest mniejsza
-            sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
-            if (get<2>(sprawdzany_Towar)>0){//czy towar dostępny w sklepie
-                odleg = nowa_odleg;
-                najblizszy_Sklep = Sk;
-            }
+    for (auto* jh: Miasto::daj_miasto()->daj_handlowe()){
+        if (!jh->czy_Siec()){
+            auto* Sk = dynamic_cast<Sklep *>(jh);
+            nowa_odleg = odleglosc(Sk->daj_x(), Sk->daj_y());
+            if (nowa_odleg < odleg){// sprawdzamy czy odległość jest mniejsza
+                sprawdzany_Towar = Sk->sprawdz_Towar(szukany_T);
+                if (get<2>(sprawdzany_Towar)>0){//czy towar dostępny w sklepie
+                    odleg = nowa_odleg;
+                    najblizszy_Sklep = Sk;
+                }
+        }
             }
         }
 

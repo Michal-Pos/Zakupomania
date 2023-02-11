@@ -26,6 +26,7 @@ public:
     //gettery
     vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
     vector<Sklep*> daj_sklepy() const {return lista_sklepow;}
+    vector<J_Handlowa*> daj_handlowe() const {return lista_handlowych;}
     void wypisz_stan();
 
     //Konstruktor
