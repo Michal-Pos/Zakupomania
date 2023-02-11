@@ -53,7 +53,6 @@ public:
 
 
     //techniczne
-    Sklep() = default;
     ~Sklep() = default;
     Sklep(const Sklep&) = delete;
     Sklep& operator=(const Sklep&) = delete;

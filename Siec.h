@@ -39,11 +39,10 @@ public:
     Siec(double _marza): marza(_marza){};
 
     //techniczne
-    Siec() = default;
-    Siec(const Siec&) = default; //kopiujący
-    Siec& operator=(const Siec&) = default;
-    Siec(Siec&&) = default;
-    Siec& operator=(Siec&&) = default;
+    Siec(const Siec&) = delete; //kopiujący
+    Siec& operator=(const Siec&) = delete;
+    Siec(Siec&&) = delete;
+    Siec& operator=(Siec&&) = delete;
 
 };
 
