@@ -13,11 +13,11 @@ public:
 //    void kup_Towar(string nazwa);
     Wierny(Sklep* Sk,double _budzet , float _x, float _y): Mieszkaniec(_budzet,_x,_y), ulubiony(Sk){}
 
-    Wierny(const Wierny&) = default;
-    Wierny& operator=(const Wierny&) = default;
+    Wierny(const Wierny&) = delete;
+    Wierny& operator=(const Wierny&) = delete;
     virtual ~Wierny(){};
-    Wierny(Wierny&&) = default;
-    Wierny& operator=(Wierny&&) = default;
+    Wierny(Wierny&&) = delete;
+    Wierny& operator=(Wierny&&) = delete;
 
 };
 
