@@ -42,7 +42,7 @@ public:
     Siec* daj_siec() const {return siec;}
 
     bool czy_w_Sieci();
-    bool czy_Siec(){return true;}
+    bool czy_Siec(){return false;}
 
     void ustaw_siec(Siec* s){siec = s;}
 

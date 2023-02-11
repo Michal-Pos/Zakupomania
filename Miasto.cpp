@@ -23,10 +23,8 @@ Miasto &Miasto::operator-=(Mieszkaniec *m) {
     return *this;
 }
 
-Miasto& Miasto::operator+=(Sklep* sk) {
-    lista_sklepow.push_back(sk);
-    return *this;
-}
+
+
 
 Miasto &Miasto::operator+=(J_Handlowa *jh) {
     lista_handlowych.push_back(jh);
@@ -40,7 +38,7 @@ void Miasto::wypisz_stan() {
     cout<<"*******************"<<endl;
     cout<<"W mieście znajduje się: "<<endl;
     cout<<"mieszkańcow: "<<lista_mieszkancow.size()<<endl;
-    cout<<"Sklepów: "<<lista_sklepow.size()<<endl;
+    cout<<"Sklepów: "<<lista_handlowych.size()<<endl;
     cout<<"*******************"<<endl;
 
 
@@ -52,6 +50,16 @@ void Miasto::wszyscy_kup() {
         m->kup();
     }
 
+}
+
+vector<Sklep *> Miasto::daj_niezalezne_sklepy() {
+    vector<Sklep *> niezalezne;
+    for (auto jh: lista_handlowych){
+        if (typeid(jh) == typeid(Sklep)){
+            niezalezne.push_back(dynamic_cast<Sklep *>(jh));
+        }
+    }
+    return niezalezne;
 }
 
 

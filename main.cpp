@@ -69,27 +69,7 @@ int main() {
 //1. Tworzenie miasta i zwykłych sklepów. Każdy sklep powinien mieć co najmniej dwa towary z niezerową
 //liczbą sztuk.
     Miasto* Warszawa = Miasto::daj_miasto();
-    // I wersja
-//    Sklep Agrykola(17,18);
-//    Sklep Banacha(-7,3);
-//
-//    Sklep Chmielna(-19, 20);
-//    Sklep Dolna(4,-3);
-//
-//    wygeneruj_asortyment(&Agrykola);
-//    wygeneruj_asortyment(&Banacha);
-//    wygeneruj_asortyment(&Chmielna);
-//    wygeneruj_asortyment(&Dolna);
-////
-////    Agrykola->wypisz_stan();
-////    Banacha->wypisz_stan();
-////    Chmielna->wypisz_stan();
-////    Dolna->wypisz_stan();
-////    Warszawa+=Agrykola;
-//    Warszawa->operator+=(&Agrykola);
-//    Warszawa->operator+=(&Banacha);
-//    Warszawa->operator+=(&Chmielna);
-//    Warszawa->operator+=(&Dolna);
+
     // II wersja
 
 
@@ -99,11 +79,15 @@ int main() {
     Sklep* Chmielna = new Sklep(-19, 20);
     Sklep* Dolna = new Sklep(4,-3);
     Sklep* Elblaska = new Sklep(4,-4);
+//    Elblaska->operator+=(new Towar(40, 1, "Chleb"));
     vector<Sklep*> lista_sklepow = {Agrykola, Banacha, Chmielna, Dolna, Elblaska};
+//    vector<Sklep*> lista_sklepow = {Elblaska};
+
     for (auto* sk: lista_sklepow){
-        Warszawa->operator+=(sk);
+        Warszawa->operator += (sk);
         sk->wypisz_stan();
     }
+    Warszawa->wypisz_stan();
 
 
 //    wygeneruj_asortyment(Agrykola);
@@ -139,15 +123,21 @@ int main() {
 //
     auto* Tomek = new Tradycjny(-4, -8, 8, "Tomek", "Chleb");
     auto* Ola = new Oszczedny(7,7, 10, "Mleko");
+    Warszawa->daj_niezalezne_sklepy();
+
     vector<Mieszkaniec*> lista_miesz = {Tomek, Ola};
-    for (auto* m: lista_miesz){
-        Warszawa->operator+=(m);
-    }
+    Tomek->kup();
+//    cout<<Elblaska->czy_Siec()<<endl;
+//    cout<<Pierwsza_Siec->czy_Siec()<<endl;
+
+//    for (auto* m: lista_miesz){
+//        Warszawa->operator+=(m);
+//    }
 //    Warszawa->operator+=(Miriam);
 //    Warszawa->operator+=(Maks);
 
 //    Warszawa->wypisz_stan();
-    Warszawa->wszyscy_kup();
+//    Warszawa->wszyscy_kup();
 
 //5. Wypisanie stanu symulacji (stan sklepów i kupujących).
 

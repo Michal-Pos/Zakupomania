@@ -4,7 +4,7 @@
 
 #ifndef ZALICZENIOWY_MIASTO_H
 #define ZALICZENIOWY_MIASTO_H
-#include "J_Handlowa.h"
+#include "Sklep.h"
 #include "Mieszkaniec.h"
 
 
@@ -14,19 +14,19 @@ using namespace std;
 class Miasto {
 private:
     vector<Mieszkaniec*> lista_mieszkancow; //Mieszkańcy
-    vector<Sklep*> lista_sklepow = {}; // Sklepy
     vector<J_Handlowa*> lista_handlowych; //Lista wszystkich Jednostek Handlowych
 public:
     Miasto& operator+=(Mieszkaniec* m);
     Miasto& operator-=(Mieszkaniec* m);
 
-    Miasto& operator+=(Sklep* sk);
+//    Miasto& operator+=(Sklep* sk);
     Miasto& operator+=(J_Handlowa* jh);
 
     //gettery
     vector<Mieszkaniec*> daj_mieszkancow() const{return lista_mieszkancow;}
-    vector<Sklep*> daj_sklepy() const {return lista_sklepow;}
     vector<J_Handlowa*> daj_handlowe() const {return lista_handlowych;}
+    vector<Sklep*> daj_niezalezne_sklepy();
+
     void wypisz_stan();
     void wszyscy_kup();
 
